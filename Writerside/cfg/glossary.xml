@@ -59,4 +59,7 @@
     <term name="repository">
         Een online locatie / server waar data op staat.
     </term>
+    <term name="dependency">
+        Een stukje software dat een ander programma nodig heeft om te werken.
+    </term>
 </terms>

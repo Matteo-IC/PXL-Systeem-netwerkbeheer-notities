@@ -1,3 +1,3 @@
-﻿# PXL Systeem en netwerkbeheer notities writerside
+﻿# PXL Systeem en netwerkbeheer notities
 
 https://matteo-ic.github.io/PXL-Systeem-netwerkbeheer-notities/
