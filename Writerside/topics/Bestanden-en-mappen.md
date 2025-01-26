@@ -264,6 +264,7 @@ Het **absolute pad naar dit bestand** zou zijn:
     <p>
     In deze context betekent het dus dat alles hernoemd kan worden.
     Niet alles wordt hernoemd want niet alles heeft "bestand" in de naam.
+    Hier komt in volgende hoofdstukken meer uitleg over.
     </p>
     </note>
 </tab>

@@ -11,7 +11,7 @@ Een package manager is een **programma dat het installeren, updaten en verwijder
 ### Zo werkt een package manager:
 
 1. Je geeft het commando om een package te installeren.
-   2. Je moet sudo gebruiken omdat je niet alleen voor jouw gebruiker installeert.
+   1. Je moet sudo gebruiken omdat je niet alleen voor jouw gebruiker installeert.
 ```bash
 gebruiker@ubuntu:~$ sudo apt install cbonsai
 ```

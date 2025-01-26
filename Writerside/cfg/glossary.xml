@@ -62,4 +62,7 @@
     <term name="dependency">
         Een stukje software dat een ander programma nodig heeft om te werken.
     </term>
+    <term name="shell">
+        Een command line interface, zet commando's om naar dingen die het systeem begrijpt.
+    </term>
 </terms>

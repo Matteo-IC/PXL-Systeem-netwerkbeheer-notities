@@ -12,5 +12,6 @@
         <toc-element topic="Command-Line-Interface.md"/>
         <toc-element topic="Bestanden-en-mappen.md"/>
         <toc-element topic="Linux-Essentials-Software.md"/>
+        <toc-element topic="Commando-structuren.md"/>
     </toc-element>
 </instance-profile>
