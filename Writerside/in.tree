@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="in"
+                 name="Notes PXL"
+                 start-page="Home.md">
+
+    <toc-element topic="Home.md"/>
+    <toc-element toc-title="Linux Essentials">
+        <toc-element topic="Linux-Essentials-1-Introductie.md"/>
+        <toc-element topic="Command-Line-Interface.md"/>
+        <toc-element topic="Bestanden-en-mappen.md"/>
+        <toc-element topic="Linux-Essentials-Software.md"/>
+    </toc-element>
+</instance-profile>

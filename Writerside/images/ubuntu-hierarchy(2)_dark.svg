@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-800 -50 2000 850">
+  <!-- Styles for the diagram -->
+  <defs>
+    <marker id="arrowhead-dark" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#aaa" />
+    </marker>
+  </defs>
+
+  <!-- Root node -->
+  <g>
+    <rect x="-119" y="10" width="120" height="60" rx="6" fill="#ffffff33" stroke="#fff" stroke-width="2"/>
+    <text x="-59" y="47" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#fff">/</text>
+  </g>
+
+  <!-- First level directories -->
+  <g>
+    <!-- dev -->
+    <rect x="-700" y="180" width="115" height="60" rx="6" fill="#ffd70033" stroke="#ffd700" stroke-width="2"/>
+    <text x="-642.5" y="217" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffd700">dev</text>
+
+    <!-- etc -->
+    <rect x="-460" y="180" width="120" height="60" rx="6" fill="#90EE9033" stroke="#90EE90" stroke-width="2"/>
+    <text x="-400" y="217" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#90EE90">etc</text>
+
+    <!-- home -->
+    <rect x="-147" y="180" width="135" height="60" rx="6" fill="#00bfff33" stroke="#00bfff" stroke-width="2"/>
+    <text x="-79.5" y="217" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#00bfff">home</text>
+
+    <!-- root -->
+    <rect x="170" y="180" width="120" height="60" rx="6" fill="#ff636333" stroke="#ff6363" stroke-width="2"/>
+    <text x="230" y="217" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ff6363">root</text>
+
+    <!-- tmp -->
+    <rect x="380" y="180" width="125" height="60" rx="6" fill="#98fb9833" stroke="#98fb98" stroke-width="2"/>
+    <text x="442.5" y="217" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#98fb98">tmp</text>
+
+    <!-- var -->
+    <rect x="580" y="180" width="117" height="60" rx="6" fill="#ff69b433" stroke="#ff69b4" stroke-width="2"/>
+    <text x="638.5" y="217" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ff69b4">var</text>
+
+    <!-- usr -->
+    <rect x="900" y="180" width="120" height="60" rx="6" fill="#ffa50033" stroke="#ffa500" stroke-width="2"/>
+    <text x="960" y="217" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffa500">usr</text>
+  </g>
+
+  <!-- Second level directories and files -->
+  <g>
+    <!-- Under dev -->
+    <rect x="-760" y="320" width="110" height="60" rx="6" fill="#aaaaaa33" stroke="#aaaaaa" stroke-width="2"/>
+    <text x="-705" y="357" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#fff">null</text>
+
+    <rect x="-630" y="320" width="115" height="60" rx="6" fill="#aaaaaa33" stroke="#aaaaaa" stroke-width="2"/>
+    <text x="-572.5" y="357" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#fff">tty</text>
+
+    <!-- Under etc -->
+    <rect x="-493" y="320" width="107" height="60" rx="6" fill="#ff69b433" stroke="#ff69b4" stroke-width="2"/>
+    <text x="-439.5" y="357" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ff69b4">apt</text>
+
+    <rect x="-370" y="320" width="137" height="60" rx="6" fill="#aaaaaa33" stroke="#aaaaaa" stroke-width="2"/>
+    <text x="-301.5" y="357" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#fff">passwd</text>
+
+    <!-- Under home -->
+    <rect x="-157" y="320" width="155" height="60" rx="6" fill="#00ffff33" stroke="#00ffff" stroke-width="2"/>
+    <text x="-79.5" y="357" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#00ffff">gebruiker</text>
+
+    <!-- Under root -->
+    <rect x="41" y="320" width="178" height="60" rx="6" fill="#aaaaaa33" stroke="#aaaaaa" stroke-width="2"/>
+    <text x="130" y="357" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#fff">.bash_history</text>
+
+    <rect x="240" y="320" width="140" height="60" rx="6" fill="#aaaaaa33" stroke="#aaaaaa" stroke-width="2"/>
+    <text x="310" y="357" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#fff">.bashrc</text>
+
+    <!-- Under var -->
+    <rect x="580" y="320" width="117" height="60" rx="6" fill="#4169e133" stroke="#4169e1" stroke-width="2"/>
+    <text x="638.5" y="357" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#4169e1">log</text>
+
+    <!-- Under usr -->
+    <rect x="760" y="320" width="121" height="60" rx="6" fill="#98fb9833" stroke="#98fb98" stroke-width="2"/>
+    <text x="820.5" y="357" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#98fb98">bin</text>
+
+    <rect x="900" y="320" width="120" height="60" rx="6" fill="#ff474733" stroke="#ff4747" stroke-width="2"/>
+    <text x="960" y="357" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ff4747">sbin</text>
+
+    <rect x="1040" y="320" width="126" height="60" rx="6" fill="#6495ed33" stroke="#6495ed" stroke-width="2"/>
+    <text x="1103" y="357" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#6495ed">share</text>
+  </g>
+
+  <!-- Third level files -->
+  <g>
+    <!-- Under gebruiker -->
+    <rect x="-260" y="480" width="176" height="60" rx="6" fill="#aaaaaa33" stroke="#aaaaaa" stroke-width="2"/>
+    <text x="-172" y="517" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#fff">.bash_history</text>
+
+    <rect x="-58" y="480" width="133" height="60" rx="6" fill="#aaaaaa33" stroke="#aaaaaa" stroke-width="2"/>
+    <text x="8.5" y="517" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#fff">.bashrc</text>
+
+    <!-- Under var/log -->
+    <rect x="570" y="480" width="137" height="60" rx="6" fill="#aaaaaa33" stroke="#aaaaaa" stroke-width="2"/>
+    <text x="638.5" y="517" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#fff">syslog</text>
+
+    <!-- Under usr/bin -->
+    <rect x="783" y="480" width="96" height="60" rx="6" fill="#aaaaaa33" stroke="#aaaaaa" stroke-width="2"/>
+    <text x="831" y="517" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#fff">ls</text>
+
+    <!-- Under usr/sbin -->
+    <rect x="884" y="480" width="153" height="60" rx="6" fill="#aaaaaa33" stroke="#aaaaaa" stroke-width="2"/>
+    <text x="960.5" y="517" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#fff">shutdown</text>
+
+    <!-- Under usr/share -->
+    <rect x="1037" y="480" width="133" height="60" rx="6" fill="#ffff0033" stroke="#ffff00" stroke-width="2"/>
+    <text x="1103.5" y="517" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffff00">man</text>
+  </g>
+
+  <!-- Fourth level -->
+  <g>
+    <!-- Under usr/share/man -->
+    <rect x="1037" y="580" width="133" height="60" rx="6" fill="#ff000033" stroke="#ff0000" stroke-width="2"/>
+    <text x="1103.5" y="617" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ff0000">man1</text>
+  </g>
+
+  <!-- Fifth level -->
+  <g>
+    <!-- Under usr/share/man/man1 -->
+    <rect x="1017" y="680" width="173" height="60" rx="6" fill="#aaaaaa33" stroke="#aaaaaa" stroke-width="2"/>
+    <text x="1103.5" y="717" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#fff">passwd.1.gz</text>
+  </g>
+
+  <!-- Connections -->
+  <g stroke="#aaa" stroke-width="2" marker-end="url(#arrowhead-dark)">
+    <!-- Root connections -->
+    <path d="M-59,70 L-642.5,180" fill="none"/>
+    <path d="M-59,70 L-400,180" fill="none"/>
+    <path d="M-59,70 L-79.5,180" fill="none"/>
+    <path d="M-59,70 L230,180" fill="none"/>
+    <path d="M-59,70 L442.5,180" fill="none"/>
+    <path d="M-59,70 L638.5,180" fill="none"/>
+    <path d="M-59,70 L960,180" fill="none"/>
+
+    <!-- dev connections -->
+    <path d="M-642.5,240 L-705,320" fill="none"/>
+    <path d="M-642.5,240 L-572.5,320" fill="none"/>
+
+    <!-- etc connections -->
+    <path d="M-400,240 L-439.5,320" fill="none"/>
+    <path d="M-400,240 L-301.5,320" fill="none"/>
+
+    <!-- home connections -->
+    <path d="M-79.5,240 L-79.5,320" fill="none"/>
+
+    <!-- gebruiker connections -->
+    <path d="M-79.5,380 L-172,480" fill="none"/>
+    <path d="M-79.5,380 L8.5,480" fill="none"/>
+
+    <!-- root connections -->
+    <path d="M230,240 L130,320" fill="none"/>
+    <path d="M230,240 L310,320" fill="none"/>
+
+    <!-- var connections -->
+    <path d="M638.5,240 L638.5,320" fill="none"/>
+    <path d="M638.5,380 L638.5,480" fill="none"/>
+
+    <!-- usr connections -->
+    <path d="M960,240 L820.5,320" fill="none"/>
+    <path d="M960,240 L960,320" fill="none"/>
+    <path d="M960,240 L1103,320" fill="none"/>
+
+    <!-- usr/bin connections -->
+    <path d="M820.5,380 L831,480" fill="none"/>
+
+    <!-- usr/sbin connections -->
+    <path d="M960,380 L960.5,480" fill="none"/>
+
+    <!-- usr/share connections -->
+    <path d="M1103,380 L1103.5,480" fill="none"/>
+    <path d="M1103.5,540 L1103.5,580" fill="none"/>
+    <path d="M1103.5,640 L1103.5,680" fill="none"/>
+  </g>
+</svg>

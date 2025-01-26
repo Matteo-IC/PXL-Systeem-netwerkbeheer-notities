@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE terms SYSTEM "https://resources.jetbrains.com/writerside/1.0/glossary.dtd">
+<terms>
+    <term name="foo">
+        Description of what "foo" is.
+    </term>
+    <term name="open-source">
+        Software waarvan de broncode gratis beschikbaar, aanpasbaar en vrij te verspreiden is.
+    </term>
+    <term name="kernel">
+        De kern van een besturingssysteem, zorgt voor de communicatie tussen hardware en software.
+    </term>
+    <term name="unix">
+        Een familie van besturingssystemen die allemaal van dezelfde Unix origine komen.
+    </term>
+    <term name="bsd-unix">
+        "Berkeley Software Distribution", de stopgezette open-source Unix versie die deels geschreven is door de universiteit van California, Berkeley.
+    </term>
+    <term name="gnu">
+        "GNU is Not Unix", een verzameling van gratis software die gebruikt kan worden als een besturingssysteem.
+    </term>
+    <term name="gnu-linux">
+        Een combinatie van de Linux kernel en GNU-software.
+    </term>
+    <term name="embedded-systeem">
+        Een embedded systeem is een gespecialiseerd computer systeem, het voert een functie uit in een groter elektronisch systeem. Wasmachine, microgolf, camera...
+    </term>
+    <term name="cli">
+        Command Line Interface, een manier om een computer of programma te gebruiken via tekst.
+    </term>
+    <term name="gui">
+        Graphical User Interface, een manier om een computer of programma te gebruiken in een visuele omgeving.
+    </term>
+    <term name="root">
+        De root gebruiker / superuser, een account dat toegang heeft tot alle commando's en bestanden.
+    </term>
+    <term name="argument">
+        Een argument geeft een waarde aan een commando waar dit commando iets mee kan doen.
+    </term>
+    <term name="manpage">
+        Een manual / handleiding van een commando, configuratie bestand... er zijn 9 secties met verschillende soorten manpages.
+    </term>
+    <term name="interface">
+        Een interface is een punt waar 2 of meer verschillende systemen met elkaar communiceren. Dit kan hardware zijn (usb poort),
+        virtueel zijn (/dev/null) of tussen mens en computer (GUI).
+    </term>
+    <term name="driver">
+        Software dat een bepaald apparaat bestuurt.
+    </term>
+    <term name="database">
+        Een verzameling van data.
+    </term>
+    <term name="recursief">
+        Zichzelf herhalend, repeterend.
+    </term>
+    <term name="string">
+        Een string is een stukje tekst.
+    </term>
+    <term name="repository">
+        Een online locatie / server waar data op staat.
+    </term>
+</terms>
