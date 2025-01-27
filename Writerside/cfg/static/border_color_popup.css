@@ -6,3 +6,11 @@
     padding-left: 12.5px !important;
     padding-right: 12.5px !important;
 }
+
+.list__item {
+    margin-top: 15px !important;
+}
+
+.article__list.list._decimal {
+    margin-top: 15px !important;
+}

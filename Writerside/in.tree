@@ -14,4 +14,11 @@
         <toc-element topic="Linux-Essentials-Software.md"/>
         <toc-element topic="Commando-structuren.md"/>
     </toc-element>
+    <toc-element toc-title="IT Organisation">
+        <toc-element topic="Landschap-en-organisatiestructuren.md"/>
+        <toc-element topic="ICT-binnen-een-bedrijf.md"/>
+        <toc-element topic="Projectmatig-werken.md"/>
+        <toc-element topic="Waterval-methode.md"/>
+        <toc-element topic="Agile-Scrum.md"/>
+    </toc-element>
 </instance-profile>
