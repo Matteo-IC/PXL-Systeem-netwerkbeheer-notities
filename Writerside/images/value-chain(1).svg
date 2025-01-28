@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Background hexagon -->
+  <path d="M200 50 L600 50 L700 200 L600 350 L200 350 L100 200 Z" fill="#D8BFD8"/>
+  
+  <!-- Inner hexagon -->
+  <path d="M250 100 L550 100 L625 200 L550 300 L250 300 L175 200 Z" fill="#800080"/>
+  
+  <!-- Central hexagon -->
+  <path d="M300 150 L500 150 L550 200 L500 250 L300 250 L250 200 Z" fill="#FF1493"/>
+  
+  <!-- Text elements -->
+  <text x="400" y="90" text-anchor="middle" fill="white" font-size="24" font-family="Arial">Guiding principles</text>
+  <text x="400" y="140" text-anchor="middle" fill="white" font-size="24" font-family="Arial">Governance</text>
+  <text x="400" y="205" text-anchor="middle" fill="white" font-size="24" font-family="Arial">Service value chain</text>
+  <text x="400" y="270" text-anchor="middle" fill="white" font-size="24" font-family="Arial">Practices</text>
+  <text x="400" y="320" text-anchor="middle" fill="white" font-size="24" font-family="Arial">Continual improvement</text>
+  
+  <!-- Circular elements -->
+  <circle cx="80" cy="200" r="60" fill="#FF1493"/>
+  <circle cx="720" cy="200" r="60" fill="#FF1493"/>
+  
+  <!-- Text in circles -->
+  <text x="80" y="185" text-anchor="middle" fill="white" font-size="20" font-family="Arial">Opportunity/</text>
+  <text x="80" y="215" text-anchor="middle" fill="white" font-size="20" font-family="Arial">demand</text>
+  <text x="720" y="205" text-anchor="middle" fill="white" font-size="20" font-family="Arial">Value</text>
+  
+  <!-- Connecting lines -->
+  <line x1="140" y1="200" x2="175" y2="200" stroke="#666" stroke-dasharray="5,5"/>
+  <line x1="625" y1="200" x2="660" y2="200" stroke="#666" stroke-dasharray="5,5"/>
+</svg>

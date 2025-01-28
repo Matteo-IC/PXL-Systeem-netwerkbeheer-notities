@@ -14,3 +14,7 @@
 .article__list.list._decimal {
     margin-top: 15px !important;
 }
+
+.article__list.list._bullet {
+    margin-top: 15px !important;
+}

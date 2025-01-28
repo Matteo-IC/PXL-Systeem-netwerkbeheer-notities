@@ -20,5 +20,6 @@
         <toc-element topic="Projectmatig-werken.md"/>
         <toc-element topic="Waterval-methode.md"/>
         <toc-element topic="Agile-Scrum.md"/>
+        <toc-element topic="ITIL.md"/>
     </toc-element>
 </instance-profile>
