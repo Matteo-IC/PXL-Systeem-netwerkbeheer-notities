@@ -153,7 +153,7 @@ De ICT-afdeling kan software:
 ## **Terminologie**
 
 | Term                | Betekenis                                                                                                                     |
-| ------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+|---------------------|-------------------------------------------------------------------------------------------------------------------------------|
 | CMS                 | Content Management System (vb MS Sharepoint)                                                                                  |
 | CRM                 | Customer Relationship Management (vb MS Dynamics 365, Salesforce)                                                             |
 | DMS                 | Document Management System (vb MS Sharepoint)                                                                                 |
@@ -168,4 +168,7 @@ De ICT-afdeling kan software:
 | Semi-automatisch    | Gedeeltelijk geautomatiseerd                                                                                                  |
 | Middleware          | Regelt integratie en communicatie tussen platformen.                                                                          |
 | Data opslag         | Relationeel (sql), hiërarchisch (boomstructuur)                                                                               |
+| DAS                 | Direct Attached Storage                                                                                                       |
+| NAS                 | Network Attached Storage                                                                                                      |
+| SAN                 | Storage Area Network                                                                                                          |
 

@@ -30,15 +30,16 @@ Doel:
 - Duidelijkheid over voortgang
 - Snelle communicatie in het team
 
-## Hoe werk scrum?
+## Hoe werkt scrum?
 
 1. Een **scrum team** wordt samengesteld: Product owner, scrum master en scrum team.
 2. De **product owner** maakt een **product backlog** met user stories.
-3. **Sprint planning**: **Scrum team selecteert user stories** voor de **volgende sprint** en **zet ze om naar taken**.
-4. **Sprint**: Werken aan taken voor 1-4 weken.
-5. **Daily standup**: **Elke dag een korte vergadering** over wat bereikt is en wat gedaan gaat worden.
-6. **Sprint review**: Op het einde van de sprint wordt er **bekeken wat bereikt is**.
-7. **Sprint retrospective**: **Reflectie over de sprint**. Wat is er goed gegaan, wat kan beter?
+3. **Sprint planning:** **Scrum team selecteert user stories** voor de **volgende sprint** en
+**zet ze om naar een sprint backlog**, het werk wordt ingeschat.
+4. **Sprint:** Werken aan taken voor 1-4 weken.
+5. **Daily standup:** **Elke dag een korte vergadering** over wat bereikt is, wat gedaan gaat worden en of je hulp nodig hebt.
+6. **Sprint review:** Op het einde van de sprint wordt er **bekeken wat bereikt is**.
+7. **Sprint retrospective:** **Reflectie over de sprint**. Wat is er goed gegaan, wat kan beter?
 8. De **volgende sprint planning**, proces herhaalt zich tot het project klaar is.
 
 ## Scrum terminologie
@@ -58,11 +59,14 @@ Doel:
     </tr>
     <tr>
         <td>Product owner</td>
-        <td>Bepaalt de prioriteiten, beheert de product backlog. Werkt samen met het scrum team en andere stakeholders.</td>
+        <td>Bepaalt de prioriteiten, beheert de product backlog. Werkt samen met het scrum team en 
+            andere <tooltip term="stakeholder">stakeholders</tooltip>.</td>
     </tr>
     <tr>
         <td>User story</td>
-        <td>Korte beschrijving van de nood van een user, vanuit het perspectief van de user.</td>
+        <td>Korte beschrijving van de nood van een user, vanuit het perspectief van de user.
+            Heeft een vast formaat: Als ... wil ik ... zodat...
+        </td>
     </tr>
     <tr>
         <td>Product backlog</td>
@@ -81,8 +85,18 @@ Doel:
         <td>Verzameling van taken die moeten worden gedaan in één sprint.</td>
     </tr>
     <tr>
+      <td>Werk inschatting</td>
+      <td>In scrum gebruikt men relatieve inschattingen. 
+          De hoeveelheid werk van een taak wordt ingeschat in vergelijking met andere taken</td>
+    </tr>
+    <tr>
+      <td>Story points</td>  
+      <td>Cijfers die gegeven worden aan taken tijdens de inschatting. Soms worden T-shirt maten ook gebruikt.</td>
+    </tr>
+    <tr>
         <td>Daily standup</td>
-        <td>Korte dagelijkse meeting van het team waar besproken wordt wat je gisteren hebt gedaan en wat je gaat doen.</td>
+        <td>Korte dagelijkse meeting van het team waar besproken wordt
+            wat je gisteren hebt gedaan, wat je gaat doen en of je daar hulp bij nodig hebt.</td>
     </tr>
     <tr>
         <td>Sprint review</td>

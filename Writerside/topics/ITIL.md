@@ -48,6 +48,10 @@ Het wordt **veel gebruikt omdat**:
         <td>Uitleg</td>
     </tr>
     <tr>
+        <td>TCO</td>
+        <td>Total Cost of Ownership, de totale kost tijdens de levensduur van rechtstreekse en onrechtstreekse kosten.</td>
+    </tr>
+    <tr>
         <td>Service / Dienst</td>
         <td>Een manier om waarde te leveren aan klanten.</td>
     </tr>
@@ -81,6 +85,8 @@ Het wordt **veel gebruikt omdat**:
 
 ITIL 4 draait om het **creëren van waarde voor de klant**.\
 Dit wordt gedaan via het **SVS (Service Value System)**.
+
+_SVS: Beschrijft hoe de verschillende componenten en activiteiten van een organisatie samenwerken om waarde te creëren._
 
 <img src="value-chain(1).svg" alt="SVS" width="600"/>
 
@@ -165,7 +171,7 @@ Het RACI-model is een **manier om de verantwoordelijkheden van iedereen in een p
   <tr>
     <td>Incident Management</td>
     <td>Moet negatieve impact van incidenten minimaliseren. 
-        Informatie over incidenten wordt opgeslagen in een IT-service management systeem</td>
+        Informatie over incidenten wordt opgeslagen in een IT-service management systeem (bv. Jira).</td>
   </tr>
   <tr>
     <td>Problem Management</td>
@@ -191,7 +197,9 @@ Het RACI-model is een **manier om de verantwoordelijkheden van iedereen in een p
   </tr>
   <tr>
     <td>Service Desk</td>
-    <td>Behandelt interne incidenten en requesten van medewerkers.</td>
+    <td>Behandelen en loggen van incidenten en requesten van klanten. 
+        Kan ook als het nodig is dingen zoals nieuwe apparatuur bestellen.
+    </td>
   </tr>
 </table>
 
