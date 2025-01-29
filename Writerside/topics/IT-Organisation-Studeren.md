@@ -193,7 +193,7 @@
 <def title="Er worden ... gegeven aan taken tijdens de inschatting van werk.">
     Story points
 </def>
-<def title="Wat is het grootste verschil tussen scrum & kanban?">
+<def title="Wat is het grootste verschil tussen scrum &amp; kanban?">
     Scrum heeft periodes terwijl kanban continu doorgaat.
 </def>
 </deflist>
