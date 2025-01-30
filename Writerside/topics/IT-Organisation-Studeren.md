@@ -25,7 +25,7 @@
 </def>
 <def title="Waarom worden afdelingen soms outsourced?">
     <control>Middelen & activiteiten te delen</control> met andere bedrijven.
-    <control>vermijden van kosten, complexiteit of risico's</control>.
+    <control>Vermijden van kosten, complexiteit of risico's</control>.
 </def>
 <def title="Wat is een business proces?">
     Een proces dat <control>over verschillende afdelingen strekt</control>. 
@@ -44,7 +44,7 @@
 <def title="Wanneer is ICT het gezicht van het bedrijf?">
     Als ICT <control>niet de core business</control> is maar <control>wel kritiek</control> is.
 </def>
-<def title="ICT is ... van het bedrijf als enkel ondersteunend is.">
+<def title="ICT is ... van het bedrijf als het enkel ondersteunend is.">
     <control>de handen</control>
 </def>
 <def title="Wanneer is een server on-premise?">
