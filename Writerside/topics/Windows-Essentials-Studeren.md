@@ -60,7 +60,7 @@ Beveiligingsfunctie die het <control>starten voorkomt van niet geauthentiseerde 
 <control>Virtualisatie platform van Microsoft</control> voor virtuele machines aan te maken en te beheren
 </def>
 
-<def title="Wat is S-Mode & Windows Sandbox?">
+<def title="Wat is S-Mode &amp; Windows Sandbox?">
 <p><control>1. S-Mode:</control></p>
 Beperkt Windows zodat het <control>alleen applicaties van de Microsoft Store kan installeren</control>.
 <p><control>2. Windows Sandbox:</control></p>
@@ -78,7 +78,7 @@ Een <control>lichtgewicht virtuele machine</control> waar je applicaties in isol
 Een <control>systeem om gebruikers en computers te beheren</control> op het netwerk van je bedrijf.
 </def>
 
-<def title="Wat is LTSC, GAC & Insider Preview?">
+<def title="Wat is LTSC, GAC &amp; Insider Preview?">
 Dit zijn <control>release channels</control>, elk krijgt andere updates / updates op andere momenten.
 
 <p><control>LTSC (Long Term Service Channel):</control></p>
@@ -96,12 +96,12 @@ De hoofdversie van het systeem. Bijvoorbeeld 24H2 of 1903. 24 voor het jaar (202
 Unieke code voor de specifieke update. Bijvoorbeeld 22621.4037, 22621 voor de versie en 4037 voor de update
 </def>
 
-<def title="Wat is RISC, CISC & ARM?">
+<def title="Wat is RISC, CISC &amp; ARM?">
 <control>RISC & CISC</control> zijn verschillende architecturen voor processoren.
 <p><control>ARM</control> is een versie van RISC.</p>
 </def>
 
-<def title="Wat is de kernel & wat is een stuurprogramma / driver?">
+<def title="Wat is de kernel &amp; wat is een stuurprogramma / driver?">
 <p><control>Kernel:</control></p>
 Het centrale onderdeel van een besturingssysteem. Regelt de <control>communicatie tussen software en hardware</control>.
 <p><control>Stuurprogramma / driver:</control></p>
@@ -184,7 +184,7 @@ Dit betekent dat een CPU <control>meerdere cores heeft waardoor die meerdere pro
 <control>Deelt 1 fysieke core op in 2 "logische cores"</control> door de resources van 1 core te splitten
 </def>
 
-<def title="Wat is Master Boot Record & GUID Partitie Tabel?">
+<def title="Wat is Master Boot Record &amp; GUID Partitie Tabel?">
 <p><control>MBR (Master Boot Record):</control></p>
 Een verouderd partitieschema.
 <p><control>GPT (GUID Partitie Tabel):</control></p>
@@ -232,7 +232,7 @@ Een <control>omgevingsvariabele</control>. Windows heeft variabelen die dingen z
 ## 3. Instellingen
 
 <deflist collapsible="true">
-<def title="Wat is een ADMX bestand & wat is een ADML bestand?">
+<def title="Wat is een ADMX bestand &amp; wat is een ADML bestand?">
 <p><control>ADMX:</control></p>
 Een bestand met de settings voor de Group Policy Editor. <control>ADMX bestanden linken de settings van de GPE aan key value pairs van het Registry</control>
 <p><control>ADML:</control></p>
@@ -259,7 +259,7 @@ Rechtsonder op opnieuw herstarten drukken terwijl je shift inhoudt
 Een <control>database waarin bijna alle configuratie gegevens voor Windows, toepassingen en hardware staat</control>.
 </def>
 
-<def title="Over welke dingen gaan HKEY_CLASSES_ROOT & HKEY_CURRENT_CONFIG?">
+<def title="Over welke dingen gaan HKEY_CLASSES_ROOT &amp; HKEY_CURRENT_CONFIG?">
 <p><control>HKEY_CLASSES_ROOT:</control></p>
 Een registry hive / <control>groep waar informatie staat over de geregistreerde bestandstypen en welke programma's daar bij horen</control> voor de huidige gebruiker.
 <p><control>HKEY_CURRENT_CONFIG:</control></p>
@@ -316,7 +316,7 @@ Een <control>extra waarde die je aan een cmdlet kan geven</control> om de uitvoe
 <p>Paden in Windows gebruiken \.</p>
 </def>
 
-<def title="Leg uit wat elk Powershell scripting recht betekent: Restricted, AllSigned, RemoteSigned, Unrestricted & Bypass.">
+<def title="Leg uit wat elk Powershell scripting recht betekent: Restricted, AllSigned, RemoteSigned, Unrestricted &amp; Bypass.">
 <p><control>1. Restricted:</control></p>
 <control>Voorkomt</control> dat Powershell scripts worden uitgevoerd.
 <p><control>2. AllSigned:</control></p>
