@@ -130,7 +130,7 @@ Windows ondersteunt niet alle hardware, deze software <control>maakt communicate
 
 ## 2. Lokaal beheer
 
-<deflist collapsible="true">
+<deflist collapsible="true" ignore-vars="true">
 <def title="Wat is MMC en hoe open je het?">
 <control>Microsoft Management Console</control> is een centrale plaats waar je in één plaats alle administratieve tools kan gebruiken.
 
@@ -224,7 +224,7 @@ NTFS, Gegevens voor Windows Recovery Environment
 Een techniek waarbij een <control>volume over meerdere fysieke schijven</control> strekt.
 </def>
 
-<def title="Wat is \%appdata%?">
+<def title="Wat is %appdata%?" ignore-vars="true">
 Een <control>omgevingsvariabele</control>. Windows heeft variabelen die dingen zoals paden bevatten.
 </def>
 </deflist>
