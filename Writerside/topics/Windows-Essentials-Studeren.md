@@ -224,7 +224,7 @@ NTFS, Gegevens voor Windows Recovery Environment
 Een techniek waarbij een <control>volume over meerdere fysieke schijven</control> strekt.
 </def>
 
-<def title="Wat is &#37;appdata&#37;">
+<def title="Wat is \%appdata%?">
 Een <control>omgevingsvariabele</control>. Windows heeft variabelen die dingen zoals paden bevatten.
 </def>
 </deflist>
