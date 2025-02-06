@@ -1,0 +1,30 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Program box -->
+  <rect x="150" y="100" width="100" height="100" fill="#f0f0f0" stroke="#333" stroke-width="2"/>
+  <text x="200" y="155" text-anchor="middle" font-family="sans-serif">Program</text>
+  
+  <!-- stdin -->
+  <path d="M50,150 L142,150" stroke="#4CAF50" stroke-width="3" marker-end="url(#greenArrow)"/>
+  <text x="95" y="135" text-anchor="middle" font-family="sans-serif" fill="#4CAF50">stdin (0)</text>
+  
+  <!-- stdout -->
+  <path d="M255,130 L342,130" stroke="#2196F3" stroke-width="3" marker-end="url(#blueArrow)"/>
+  <text x="300" y="110" text-anchor="middle" font-family="sans-serif" fill="#2196F3">stdout (1)</text>
+  
+  <!-- stderr -->
+  <path d="M255,170 L342,170" stroke="#F44336" stroke-width="3" marker-end="url(#redArrow)"/>
+  <text x="300" y="200" text-anchor="middle" font-family="sans-serif" fill="#F44336">stderr (2)</text>
+  
+  <!-- Arrow definitions with matching colors -->
+  <defs>
+    <marker id="greenArrow" markerWidth="10" markerHeight="7" refX="7" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4CAF50"/>
+    </marker>
+    <marker id="blueArrow" markerWidth="10" markerHeight="7" refX="7" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2196F3"/>
+    </marker>
+    <marker id="redArrow" markerWidth="10" markerHeight="7" refX="7" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#F44336"/>
+    </marker>
+  </defs>
+</svg>
