@@ -26,4 +26,13 @@
     <toc-element toc-title="Windows Essentials">
         <toc-element topic="Windows-Essentials-Studeren.md"/>
     </toc-element>
+    <toc-element toc-title="Linux Advanced">
+        <toc-element topic="Installatie.md"/>
+    </toc-element>
+    <toc-element toc-title="IT Organisation 2">
+        <toc-element topic="ITORG2-Eerste-les.md"/>
+    </toc-element>
+    <toc-element toc-title="Windows Advanced">
+        <toc-element topic="WindowsAdvanced-Week-1.md"/>
+    </toc-element>
 </instance-profile>
