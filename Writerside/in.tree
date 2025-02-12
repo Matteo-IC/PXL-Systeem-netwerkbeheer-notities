@@ -34,5 +34,6 @@
     </toc-element>
     <toc-element toc-title="Windows Advanced">
         <toc-element topic="WindowsAdvanced-Week-1.md"/>
+        <toc-element topic="WindowsAdvanced-Domein-en-users.md"/>
     </toc-element>
 </instance-profile>
