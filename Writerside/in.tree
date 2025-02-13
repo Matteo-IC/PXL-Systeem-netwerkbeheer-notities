@@ -3,7 +3,7 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
 <instance-profile id="in"
-                 name="Notes PXL"
+                 name="Notities PXL"
                  start-page="Home.md">
 
     <toc-element topic="Home.md"/>
