@@ -8,7 +8,7 @@ een switch een MAC adres niet kent.
 **Ingress:** De **poort** waar een frame **binnenkomt**.\
 **Egress:** De **poort** waar een frame **verstuurd wordt**.
 
-**Collision domain:** De **area** (in een logische topology) waar, **als een collision gebeurt** alle **apparaten tijdelijk
+**Collision domain:** De **area** (in een logische topology) **waar, als een collision gebeurt** alle **apparaten tijdelijk
 moeten wachten met communicatie**. Dit kan meerdere apparaten bevatten, maar is ook bij elke kabel. Als er dus een aantal
 apparaten via één kabel ergens mee verbonden zijn, dan zitten ze in een collision domain.
 

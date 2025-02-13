@@ -4,14 +4,14 @@
 
 ### Domein
 
-**Een computer kan lid van een workgroup of een domain.**
+**Een computer kan lid zijn van een workgroup of een domain.**
 
 - **Workgroup:**
-  - Niet centraal managed.
+  - Niet centraal beheerd.
   - Bestaat uit gelijke clients (computers).
   - Policies moeten per toestel apart geconfigureerd worden.
 - **Domain:**
-  - Centraal managed
+  - Centraal beheerd
   - Bestaat uit één of meerdere servers die clients beheren.
     - Domain controllers
     - Extra controllers heten: ADC (Additional Domain Controller)
@@ -30,8 +30,8 @@ Minimale Windows installatie zonder GUI.\
 Zorgt voor betere beveiliging en prestaties.
 
 **Nano server:**\
-Nog lichter dan Server Core die geoptimaliseerd is voor cloudomgevingen en containers.\
-Ontworpen voor specifieke scenario's. Je kan niet lokaal inloggen, wel op afstand.
+Nog lichter dan Server Core. Is geoptimaliseerd voor cloudomgevingen en containers.\
+Ontworpen voor gebruik in specifieke scenario's. Je kan niet lokaal inloggen, wel op afstand.
 
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 <format style="underline">
@@ -44,24 +44,24 @@ Ontworpen voor specifieke scenario's. Je kan niet lokaal inloggen, wel op afstan
 #### Azure
 
 **Hybride mogelijkheden**
-- Azure biedt de mogelijkheid om on-premise en cloud te mixen
+- Azure biedt de mogelijkheid om **on-premise en cloud te mixen**
 
 **Kosten besparing**
-- Via Azure Hybrid Benefit kunnen klanten bestaande licenties gebruiken 
+- Via Azure Hybrid Benefit kunnen klanten **bestaande licenties gebruiken** 
 
 **Beveiliging**
-- Azure biedt geavanceerde beveiligingsfuncties om gevoelige workloads te beschermen.
+- Azure biedt **geavanceerde beveiligingsfuncties** om gevoelige workloads te beschermen.
 
 #### AWS
 
 **Brede ondersteuning**
-- AWS ondersteunt een breed scala aan Windows Server-versies en -toepassingen
+- AWS **ondersteunt** een **breed scala** aan Windows Server-versies en -toepassingen
 
 **Licentiebeheer**
-- Met AWS License Manager kunnen organisaties hun softwarelicenties gemakkelijk beheren.
+- Met AWS License Manager kunnen organisaties hun **softwarelicenties gemakkelijk beheren**.
 
 **Prestatie**
-- AWS biedt een scalable infrastructuur die is geoptimaliseerd voor het uitvoeren van veeleisende Windows-workloads.
+- AWS biedt een **scalable** infrastructuur die is **geoptimaliseerd** voor het uitvoeren van veeleisende Windows-workloads.
 
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 <format style="underline">
@@ -186,10 +186,10 @@ zien of het wachtwoord hetzelfde is als bij de Windows server en je toegang verl
 **AD databases bevatten alle gegevens van het domein. We noemen deze gegevens objecten**.
 - Usernames, wachtwoorden, policies, computernamen...
 
-#### In een zin
+### In een zin
 
-**AD databases bevinden zich op** één of meer servers genaamd de **Domain Controller** (DC). Elke extra DC krijgt de naam
-ADC (Additional Domain Controller), deze synchroniseren met elkaar zodat ze identiek zijn.\
+**AD databases bevinden zich op** één of meer servers genaamd de **Domain Controller** (DC). Elke **extra DC** krijgt de
+**naam ADC** (Additional Domain Controller), deze synchroniseren met elkaar zodat ze identiek zijn.\
 **De DC kan werk met andere delen, dit heet load balancing.**\
 De **DC kan users authenticeren**, scripts doorsturen, policies aansturen, en security instellingen uitvoeren **via LDAP**.
 

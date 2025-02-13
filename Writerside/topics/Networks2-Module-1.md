@@ -44,8 +44,8 @@ S1(config-if)# speed 100
 
 ### Auto-MDIX
 
-Bepaalde kabels moeten gebruikt worden in specifieke scenarios:
-**Straight-through:** Verbind andere soorten apparaten met elkaar (bv. switch & computer).
+Bepaalde kabels moeten gebruikt worden in specifieke scenarios:\
+**Straight-through:** Verbind andere soorten apparaten met elkaar (bv. switch & computer).\
 **Crossover:** Verbind gelijkaardige apparaten met elkaar (bv. computer & computer).
 
 **Auto-MDIX** lost problemen op door **automatisch de connectie aan te passen aan de kabel**.
