@@ -22,7 +22,7 @@
     </tr>
     <tr>
         <td>Hypervisor</td>
-        <td>Software that you can use to run multiple virtual machines on a single physical machine.</td>
+        <td>Software die je kan gebruiken om één of meerdere VMs op een host te runnen.</td>
     </tr>
     <tr>
         <td>Guest</td>

@@ -22,4 +22,9 @@
         <description>Created after removal of "Windows Essentials" from Notes PXL</description>
         <accepts>Windows-Essentials.html</accepts>
     </rule>
+    <rule id="669572bc">
+        <description>
+            <![CDATA[Created after removal of "<Networks2-Basic-Device-Configuration.md>" from Notes PXL]]></description>
+        <accepts>Networks2-Basic-Device-Configuration.html</accepts>
+    </rule>
 </rules>

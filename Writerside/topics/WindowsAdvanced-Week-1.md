@@ -220,6 +220,23 @@ DNS is een service die Fully Qualified Domain Names (fqdn) omzet naar ip adresse
 #### Tree
 
 Een **domain** bestaat uit een **AD Database die identiek & gesynchroniseerd is tussen alle servers**.\
-**Gebruikers kunnen dus op elke server / domain controller inloggen.** Zo wordt de load verdeelt.
-
+**Gebruikers kunnen dus op elke server / domain controller inloggen.** Zo wordt de load verdeelt.\
+\
+\
 De **AD Database kan snel groeien**. Hoe groter, hoe trager. Je scheid ook best accounts op in verschillende groepen.
+
+Om te **voorkomen dat de AD Database te groot en te moeilijk te beheren wordt** kan je deze 
+**opsplitsen in kleinere databases**.\
+Een nieuwe kleinere database is een **child database**. Deze wordt **gemaakt via een child domain**.
+
+**Child domain:** Een **afgesplitst domein van het originele domein**. Als naam wordt er een **prefix toegevoegd** aan
+de naam van het parent domain. Dit domain heeft een **aparte AD en AD Database**.
+
+Standaard hebben de parent en het child domain een "**two way trust**", dit betekent dat de **login gegevens van een 
+account** in één AD Database ook **werken bij een parent of child AD Database**.\
+\
+\
+De **verzameling van** alle **parent en child domains** is een **tree**.
+
+#### Forest
+
