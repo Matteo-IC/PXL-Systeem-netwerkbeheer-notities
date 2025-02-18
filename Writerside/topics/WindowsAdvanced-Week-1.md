@@ -240,3 +240,31 @@ De **verzameling van** alle **parent en child domains** is een **tree**.
 
 #### Forest
 
+Als **2 aparte domeinen** / trees **gekoppeld** worden, noemt men dat een **forest**.\
+Je **zet** een **forest op** door een **trust verbinding** op te zetten tussen **beide domeinen**.
+
+*Het kan ingesteld worden dat users van 1 domein kunnen inloggen op het andere, maar niet omgekeerd.*\
+*Het kan ook dat alle users bij elk domein kunnen inloggen.*
+
+#### Rollen - Features
+
+Een **rol is een functie die aan een server wordt gegeven**.
+
+Bijvoorbeeld:
+- Domain controller
+- File server
+- DNS server
+- Web server
+
+Elke **rol moet eerst geïnstalleerd** worden en kan **daarna geconfigureerd** worden vie Server Manager.
+
+**Feature:** Een uitbreiding die door rollen kan gebruikt worden of als stand alone.
+
+Bijvoorbeeld:
+- Bitlocker
+- .Net framework
+- Backup
+
+### AGDLP
+
+Users moeten aangemaakt worden via het "Active Directory Users & Computers" tool.

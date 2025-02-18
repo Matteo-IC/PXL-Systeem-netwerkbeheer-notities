@@ -29,6 +29,7 @@
     <toc-element toc-title="Linux Advanced">
         <toc-element topic="Installatie.md"/>
         <toc-element topic="LinuxAdvanced-Server-Administratie.md"/>
+        <toc-element topic="LinAdv-Services-starten-en-stoppen.md"/>
     </toc-element>
     <toc-element toc-title="IT Organisation 2">
         <toc-element topic="ITORG2-Eerste-les.md"/>
@@ -37,6 +38,7 @@
     <toc-element toc-title="Windows Advanced">
         <toc-element topic="WindowsAdvanced-Week-1.md"/>
         <toc-element topic="WindowsAdvanced-Domein-en-users.md"/>
+        <toc-element topic="WindowsAdvanced-Mappen-delen.md"/>
     </toc-element>
     <toc-element toc-title="Networks 2">
         <toc-element topic="Networks2-Module-1.md"/>
