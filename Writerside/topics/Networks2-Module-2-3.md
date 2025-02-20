@@ -16,14 +16,15 @@ apparaten via één kabel ergens mee verbonden zijn, dan zitten ze in een collis
 
 **VLAN:** Een groep van apparaten die **fysiek verbonden** zijn, maar **virtueel gescheiden** zijn.
 
-**Frames krijgen een tag om de VLAN te identificeren.**
-
-- Betere beveiliging
+**Waarom:**
+- **Betere beveiliging**
     - Je kan verschillende beveiligingsregels zetten op elke VLAN.
-- Minder broadcast verkeer
+- **Minder broadcast verkeer**
     - Broadcasts worden niet naar andere VLAN's verstuurd.
-- Geen kosten om fysiek te scheiden
+- **Geen kosten om fysiek te scheiden**
     - Moet niet extra hardware aankopen
+
+**Frames krijgen een tag om de VLAN te identificeren.**
 
 ### VLAN type's
 
@@ -44,10 +45,65 @@ apparaten via één kabel ergens mee verbonden zijn, dan zitten ze in een collis
     - VLAN voor VoIP
     - Bandbreedte belangrijk
 
-### VLAN trunks
+## VLAN configuratie TODO
+
+**Normal range VLAN's:**
+- Gebruikt in klein tot middelgrote bedrijven
+- VLAN ID 1 - 1005
+- ID 1002 - 1005 zijn gereserveerd voor oude technologieën
+-
+
+## VLAN trunks TODO
 
 Een VLAN kan niet over een andere VLAN. Stel dat er één poort is die maar één VLAN mag gebruiken, maar andere nodig hebben.
 
 In dat scenario wordt een **trunk** gebruikt. Een trunk **laat meer dan één VLAN op een poort toe**.\
 Dit gebruikt het **IEEE 802.1Q** protocol.
+
+## Dynamic Trunking Protocol
+
+Werkt alleen op switches van Cisco. 
+
+**DTP (Dynamic Trunking Protocol)** zorgt dat sommige Cisco **switches automatisch trunking** kunnen **onderhandelen** met de
+**switch die** er **naast staat**.
+
+Dit werkt zoals Auto-MDIX, de switch kiest automatisch welke modus de poort op staat.
+
+<table style="both">
+    <tr>
+      <td>Switch 1 ↓ 2 →</td>
+      <td>Dynamic Auto</td>
+      <td>Dynamic Desirable</td>
+      <td>Trunk</td>
+      <td>Access</td>
+    </tr>
+    <tr>
+      <td>Dynamic Auto</td>
+      <td>Access</td>
+      <td>Trunk</td>
+      <td>Trunk</td>
+      <td>Access</td>
+    </tr>
+    <tr>
+      <td>Dynamic Desirable</td>
+      <td>Trunk</td>
+      <td>Trunk</td>
+      <td>Trunk</td>
+      <td>Access</td>
+    </tr>
+    <tr>
+      <td>Trunk</td>
+      <td>Trunk</td>
+      <td>Trunk</td>
+      <td>Trunk</td>
+      <td>Limited connectivity</td>
+    </tr>
+    <tr>
+      <td>Access</td>
+      <td>Access</td>
+      <td>Access</td>
+      <td>Limited connectivity</td>
+      <td>Access</td>
+    </tr>
+</table>
 

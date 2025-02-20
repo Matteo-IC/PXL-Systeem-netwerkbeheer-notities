@@ -137,7 +137,7 @@ Ontworpen voor gebruik in specifieke scenario's. Je kan niet lokaal inloggen, we
 </format>
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 
-### CAL's
+## CAL's
 
 Een **Client Access License** (CAL) is een licentie die **vereist is voor gebruikers of apparaten** om **toegang te krijgen tot
 een Windows Server**.
@@ -164,7 +164,7 @@ met de server.
 </format>
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 
-### Active Directory (AD) en LDAP
+## Active Directory (AD) en LDAP
 
 De **gebruikersnaam, wachtwoord** en andere instellingen worden **opgeslagen in een database genaamd NTDS**.\
 Dit is deel van AD.
@@ -199,13 +199,13 @@ De **DC kan users authenticeren**, scripts doorsturen, policies aansturen, en se
 </format>
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 
-### Basisservices
+## Basisservices
 
-#### DHCP
+### DHCP
 
 Een DHCP service deelt ip configuraties uit aan toestellen.
 
-#### DNS
+### DNS
 
 DNS is een service die Fully Qualified Domain Names (fqdn) omzet naar ip adressen.
 
@@ -215,9 +215,9 @@ DNS is een service die Fully Qualified Domain Names (fqdn) omzet naar ip adresse
 </format>
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 
-### Domein creatie
+## Domein creatie
 
-#### Tree
+### Tree
 
 Een **domain** bestaat uit een **AD Database die identiek & gesynchroniseerd is tussen alle servers**.\
 **Gebruikers kunnen dus op elke server / domain controller inloggen.** Zo wordt de load verdeelt.\
@@ -238,7 +238,7 @@ account** in één AD Database ook **werken bij een parent of child AD Database*
 \
 De **verzameling van** alle **parent en child domains** is een **tree**.
 
-#### Forest
+### Forest
 
 Als **2 aparte domeinen** / trees **gekoppeld** worden, noemt men dat een **forest**.\
 Je **zet** een **forest op** door een **trust verbinding** op te zetten tussen **beide domeinen**.
@@ -246,7 +246,7 @@ Je **zet** een **forest op** door een **trust verbinding** op te zetten tussen *
 *Het kan ingesteld worden dat users van 1 domein kunnen inloggen op het andere, maar niet omgekeerd.*\
 *Het kan ook dat alle users bij elk domein kunnen inloggen.*
 
-#### Rollen - Features
+### Rollen - Features
 
 Een **rol is een functie die aan een server wordt gegeven**.
 
@@ -265,6 +265,37 @@ Bijvoorbeeld:
 - .Net framework
 - Backup
 
-### AGDLP
+## AGDLP
+
+AGDLP staat voor Accounts, Global groups, Domain Local groups, Permissions.
+
+Voorbeeld stappen volgens AGDLP:
+1. **Accounts** maken
+2. **Global groups** 1_GL & 2_GL maken
+3. Deze toevoegen aan de nieuwe **Domain Local groups** 1_DL & 2_DL
+4. Domain Local group 1_2_DL maken
+   - Om alle gebruikers in beide groepen te beheren via 1 groep
+5. Groepen **rechten** geven
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 
 Users moeten aangemaakt worden via het "Active Directory Users & Computers" tool.
+
+**User group:** Verzameling van users die dezelfde instellingen en beveiliging hebben.
+
+2 soorten van groepen:
+- **Security group**
+  - Voor groepen **gebruikers toegang** te **geven tot resources**: websites, folders...
+  - Onderverdeeld in:
+    - **Global groups**: Groepen die in het heel forest zichtbaar zijn (dus zichtbaar voor andere domeinen)
+    - **Domain local groups**: Groepen die enkel zichtbaar zijn voor het eigen domein
+- **Distribution group**
+  - Hoofdzakelijk voor **gebruikers** in **mailing groepen** te **verzamelen**
+
+## Organizational units
+
+

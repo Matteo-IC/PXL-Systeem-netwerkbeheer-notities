@@ -30,6 +30,7 @@
         <toc-element topic="Installatie.md"/>
         <toc-element topic="LinuxAdvanced-Server-Administratie.md"/>
         <toc-element topic="LinAdv-Services-starten-en-stoppen.md"/>
+        <toc-element topic="LinAdv-Drive-management.md"/>
     </toc-element>
     <toc-element toc-title="IT Organisation 2">
         <toc-element topic="ITORG2-Eerste-les.md"/>
