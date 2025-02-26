@@ -27,4 +27,16 @@
             <![CDATA[Created after removal of "<Networks2-Basic-Device-Configuration.md>" from Notes PXL]]></description>
         <accepts>Networks2-Basic-Device-Configuration.html</accepts>
     </rule>
+    <rule id="71c6f5de">
+        <description>Created after removal of "Week 1" from Notities PXL</description>
+        <accepts>WindowsAdvanced-Week-1.html</accepts>
+    </rule>
+    <rule id="7e3eac19">
+        <description>Created after removal of "Mappen delen in werkgroep" from Notities PXL</description>
+        <accepts>WindowsAdvanced-Mappen-delen.html</accepts>
+    </rule>
+    <rule id="7a2b5857">
+        <description>Created after removal of "Domein en users" from Notities PXL</description>
+        <accepts>WindowsAdvanced-Domein-en-users.html</accepts>
+    </rule>
 </rules>

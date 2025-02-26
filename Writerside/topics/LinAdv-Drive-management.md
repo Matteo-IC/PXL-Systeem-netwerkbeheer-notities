@@ -13,10 +13,11 @@ De student(e):
 Als je een **OS installeert** wordt de **schijf gepartitioneerd**. Elke partitie is geformatteerd met een bepaald
 bestandssysteem.
 
-**Linux** heeft **2 partities** die op een **speciale manier** zijn **geformatteerd**:
-- **Swappartitie:** Als er **weinig RAM** is, wordt **niet gebruikte RAM tijdelijk opgeslagen in** de **swappartitie**.
-- **Logical Volume Management (LVM):** Een flexibele en meer geavanceerde **methode** dan traditionele manieren om **opslag
-te partitioneren**.
+**Partities:** **Virtueel afgescheiden delen van een schijf**.\
+**Bestandssysteem:** Een **manier om data te organiseren** op een schijf.\
+**Mount locatie:** Een **locatie in het bestandssysteem** waar een **schijf aan gekoppeld** is.
+
+*Swappartitie: Als er weinig RAM is, wordt niet gebruikte RAM tijdelijk opgeslagen in de swappartitie.*
 
 In **Linux begint** alles vanuit de **root map `/`**.
 
@@ -30,14 +31,22 @@ sda             8:0    0    8G  0 disk
 ...
 ```
 
+Je kan met de `-o` optie de **kolommen kiezen** die je wilt zien:
+```
+[student@ServerMIC ~]$ sudo lsblk -o NAME,UUID
+NAME          UUID
+sda
+└─sda1        47fec413-9ec7-4f32-baa9-9046c961a82f
+```
+
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 <format style="underline">
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 </format>
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 
-In `/etc/fstab` staan 6 dingen:
-1. Een **ID** voor het apparaat:
+In **`/etc/fstab`** staan **partities en schijven**. Elke regel bevat 6 dingen:
+1. Een **ID** voor de partitie of het apparaat:
 ```
 UUID=1234-5678  /home  ext4  defaults,noatime  0  2
 ^^^^^^^^^^^^^^
@@ -85,6 +94,8 @@ Als je een schijf toevoegt en die mount maar dit **niet in fstab zet gaat Linux 
 3. Het is **nog niet verbonden** met het bestandssysteem.
 4. **Je partitioneert, formatteert en "mount" het.**
     - Mounten betekent dat je de schijf aan een locatie in je bestandssysteem toewijst.
+
+### Stappen om een schijf toe te voegen
 
 ### 1: Schijf vinden
 
@@ -198,3 +209,84 @@ sda             8:0    0    8G  0 disk
 ```
 /dev/sda1    /mnt/schijf    ext4    defaults    0    2
 ```
+
+## LVM
+
+**LVM** staat voor **Logical Volume Management**.
+
+Het is een manier om **logische volumes dynamisch te beheren**.\
+**Logische volumes** zijn **partities** die **over meerdere fysieke schijven** kunnen **verspreid** worden.
+
+**LVM** is **handig** omdat je **logische volumes** kan **vergroten en verkleinen zonder data te verliezen**.
+
+### Hoe LVM werkt
+
+**LVM** gebruikt **3 concepten**:
+```
+Physical Volume -> Volume Group -> Logical Volume
+       |                |                |
+       |                |                |
+       ↓                |                |
+Een volledige schijf    |                |
+of partitie op die      |                |
+schijf.                 ↓                |
+                Een groep van physical   |
+                volumes.                 ↓
+                                   Een logisch volume waar
+                                   een bestandssysteem
+                                   op kan staan.
+```
+
+**In een zin:**\
+Er worden één of meerdere **physical volumes** gemaakt.\
+Die worden **samengevoegd** in een **volume group**.\
+Daaruit worden **logische volumes** gemaakt.
+
+De **logische volumes** worden **geformatteerd** en **gemount** zoals een normale partitie.
+
+### LVM commando's
+
+Checken of er Physical Volumes, Volume Groups en Logical Volumes zijn:
+```
+[student@ServerMIC ~]$ sudo pvs
+  PV             VG   Fmt  Attr PSize  PFree
+  /dev/nvme0n1p3 rhel lvm2 a--  18,41g    0
+[student@ServerMIC ~]$ sudo vgs
+  VG   #PV #LV #SN Attr   VSize  VFree
+  rhel   1   2   0 wz--n- 18,41g    0
+[student@ServerMIC ~]$ sudo lvs
+  LV   VG   Attr       LSize  Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  root rhel -wi-ao---- 16,41g
+  swap rhel -wi-ao----  2,00g
+```
+
+Om de **partities op een schijf** met extra info **te tonen**:
+```
+[student@ServerMIC ~]$ sudo gdisk -l /dev/nvme0n1
+[student@ServerMIC ~]$ sudo lsblk /dev/nvme0n1
+```
+
+Om **informatie** te tonen over een **physical volume**:
+```
+[student@ServerMIC ~]$ sudo pvdisplay /dev/nvme0n1p3
+```
+
+Hetzelfde voor een **volume group en logical volume**:
+```
+[student@ServerMIC ~]$ sudo vgdisplay rhel
+[student@ServerMIC ~]$ sudo lvdisplay /dev/rhel/root
+```
+*Gebruik deze zonder pad om een lijst van alle volume groups, logical volumes of physical volumes te tonen.*
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+#### Volumegroep en logisch volume maken
+
+
+
+
+

@@ -1,2 +1,0 @@
-# Mappen delen in werkgroep
-
