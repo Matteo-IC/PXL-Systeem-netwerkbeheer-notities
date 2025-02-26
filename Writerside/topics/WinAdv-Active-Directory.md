@@ -29,12 +29,6 @@ zien of het wachtwoord hetzelfde is als bij de Windows server en je toegang verl
 **De DC kan werk met andere delen, dit heet load balancing.**\
 De **DC kan users authenticeren**, scripts doorsturen, policies aansturen, en security instellingen uitvoeren **via LDAP**.
 
-<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
-<format style="underline">
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-</format>
-<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
-
 ## Domein creatie
 
 ### Tree

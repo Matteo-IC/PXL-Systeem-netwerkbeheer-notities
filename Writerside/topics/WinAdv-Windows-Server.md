@@ -15,12 +15,6 @@
         - Extra controllers heten: ADC (Additional Domain Controller)
     - Policies kunnen voor meerdere of enkele toestellen geconfigureerd worden.
 
-<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
-<format style="underline">
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-</format>
-<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
-
 ## Server core & Nano server
 
 **Server Core:**\
@@ -30,12 +24,6 @@ Zorgt voor betere beveiliging en prestaties.
 **Nano server:**\
 Nog lichter dan Server Core. Is geoptimaliseerd voor cloudomgevingen en containers.\
 Ontworpen voor gebruik in specifieke scenario's. Je kan niet lokaal inloggen, wel op afstand.
-
-<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
-<format style="underline">
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-</format>
-<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 
 ## Azure & AWS
 
@@ -60,12 +48,6 @@ Ontworpen voor gebruik in specifieke scenario's. Je kan niet lokaal inloggen, we
 
 **Prestatie**
 - AWS biedt een **scalable** infrastructuur die is **geoptimaliseerd** voor het uitvoeren van veeleisende Windows-workloads.
-
-<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
-<format style="underline">
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-</format>
-<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 
 ## Windows server versies
 
