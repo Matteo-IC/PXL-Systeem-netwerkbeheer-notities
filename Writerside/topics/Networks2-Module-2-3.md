@@ -32,6 +32,7 @@ apparaten via één kabel ergens mee verbonden zijn, dan zitten ze in een collis
     - Standaard wordt VLAN 1 voor alles gebruikt
     - Extra VLAN's die worden toegevoegd nemen een deel van VLAN 1 over
     - Kan geen andere naam krijgen, kan niet verwijderen
+    - VLAN ID 1
 - **Data VLAN**
     - Om netwerk verkeer van gebruikers te scheiden
     - Scheid het netwerk in groepen van gebruikers of apparaten
@@ -45,20 +46,27 @@ apparaten via één kabel ergens mee verbonden zijn, dan zitten ze in een collis
     - VLAN voor VoIP
     - Bandbreedte belangrijk
 
-## VLAN configuratie TODO
+## VLAN configuratie
 
 **Normal range VLAN's:**
 - Gebruikt in klein tot middelgrote bedrijven
+- Configuratie wordt opgeslagen in flash memory
 - VLAN ID 1 - 1005
 - ID 1002 - 1005 zijn gereserveerd voor oude technologieën
--
+- ID 1 & 1002 - 1005 kunnen niet verwijderd worden
 
-## VLAN trunks TODO
+**Extended range VLAN's:**
+- VLAN ID 1006 - 4094
+- Gebruikt door grote bedrijven
+- Configuratie wordt opgeslagen in running-config
 
-Een VLAN kan niet over een andere VLAN. Stel dat er één poort is die maar één VLAN mag gebruiken, maar andere nodig hebben.
+## VLAN trunks
+
+Een VLAN kan niet over een andere VLAN.\
+Stel dat er één poort is die maar één VLAN mag gebruiken, maar andere nodig hebben.
 
 In dat scenario wordt een **trunk** gebruikt. Een trunk **laat meer dan één VLAN op een poort toe**.\
-Dit gebruikt het **IEEE 802.1Q** protocol.
+Dit gebruikt het **IEEE 802.1Q** protocol (uitgesproken als "dot one q").
 
 ## Dynamic Trunking Protocol
 

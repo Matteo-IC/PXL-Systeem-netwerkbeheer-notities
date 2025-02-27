@@ -45,5 +45,7 @@
     <toc-element toc-title="Networks 2">
         <toc-element topic="Networks2-Module-1.md"/>
         <toc-element topic="Networks2-Module-2-3.md"/>
+        <toc-element topic="Net2-Module-4.md"/>
+        <toc-element topic="Net2-Module-5.md"/>
     </toc-element>
 </instance-profile>
