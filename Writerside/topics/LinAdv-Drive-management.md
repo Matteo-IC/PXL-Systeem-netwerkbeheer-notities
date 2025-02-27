@@ -253,6 +253,7 @@ sda             8:0    0    8G  0 disk
    1. Als je maar 1 partitie hebt, wordt die automatisch gekozen.
 4. Typ `w` en daarna `y` om de veranderingen op te slaan.
 <code-block collapsible="true">
+<![CDATA[
 [student@ServerMIC ~]$ sudo gdisk /dev/sda
 GPT fdisk (gdisk) version 1.0.7
 
@@ -289,6 +290,7 @@ PARTITIONS!!
 Do you want to proceed? (Y/N): y
 OK; writing new GUID partition table (GPT) to /dev/sda.
 The operation has completed successfully.
+]]>
 </code-block>
 
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
@@ -311,6 +313,7 @@ The operation has completed successfully.
 7. Check de partities met `p`.
 8. **Sla de veranderingen op** met `w` en `y`.
 <code-block collapsible="true">
+<![CDATA[
 [student@ServerMIC ~]$ sudo gdisk /dev/sda
 GPT fdisk (gdisk) version 1.0.7
 
@@ -361,6 +364,7 @@ PARTITIONS!!
 Do you want to proceed? (Y/N): y
 OK; writing new GUID partition table (GPT) to /dev/sda.
 The operation has completed successfully.
+]]>
 </code-block>
 
 **Vergeet niet om de partities te formatteren en mounten.**
@@ -381,6 +385,7 @@ The operation has completed successfully.
 5. **Controleer** met `p`.
 6. **Sla de veranderingen op** met `w` en `y`.
 <code-block collapsible="true">
+<![CDATA[
 [student@ServerMIC ~]$ sudo gdisk /dev/sda
 GPT fdisk (gdisk) version 1.0.7
 
@@ -431,6 +436,7 @@ PARTITIONS!!
 Do you want to proceed? (Y/N): y
 OK; writing new GUID partition table (GPT) to /dev/sda.
 The operation has completed successfully.
+]]>
 </code-block>
 
 **Vergeet niet om de partities te formatteren en mounten.**
