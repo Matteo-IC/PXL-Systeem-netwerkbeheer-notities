@@ -83,6 +83,20 @@ Updaten:
 
 ## Veilige communicatie
 
+**Encryptie** maakt gebruik van een **wiskundige formule** om **tekst onleesbaar** te **maken**.\
+Zo is het **veilig** om **gevoelige informatie** te **versturen**.
+
+**Decryptie** maakt de tekst weer **leesbaar**.\
+Dit is veel **moeilijker dan encryptie**.\
+Om te **decrypteren** heb je een **"sleutel" nodig**.\
+De **sleutel** is een **wiskundige formule** die de **encryptie ongedaan maakt**.
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
 ### Symmetrische encryptie
 
 1. Een geheime **sleutel** (wiskundige formule) wordt **van één apparaat naar een ander gestuurd**.

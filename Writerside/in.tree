@@ -35,6 +35,7 @@
     <toc-element toc-title="IT Organisation 2">
         <toc-element topic="ITORG2-Eerste-les.md"/>
         <toc-element topic="ITORG2-Organisatiestructuren.md"/>
+        <toc-element topic="ITORG2-Beroepsprofielen.md"/>
     </toc-element>
     <toc-element toc-title="Windows Advanced">
         <toc-element topic="WinAdv-Windows-Server.md"/>
