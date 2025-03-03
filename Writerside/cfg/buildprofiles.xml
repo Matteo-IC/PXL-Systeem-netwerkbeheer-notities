@@ -8,9 +8,9 @@
     </variables>
     <build-profile instance="in">
         <variables>
-            <include-in-head>
-                ./googlef6ff5beb2ed505cc.html
-            </include-in-head>
+            <analytics-head-script-file>
+                google_search_script
+            </analytics-head-script-file>
             <noindex-content>false</noindex-content>
         </variables>
     </build-profile>
