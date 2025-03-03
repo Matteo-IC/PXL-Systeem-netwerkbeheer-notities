@@ -8,6 +8,9 @@
     </variables>
     <build-profile instance="in">
         <variables>
+            <include-in-head>
+                ./googlef6ff5beb2ed505cc.html
+            </include-in-head>
             <noindex-content>false</noindex-content>
         </variables>
     </build-profile>

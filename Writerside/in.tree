@@ -7,7 +7,7 @@
                  start-page="Home.md">
 
     <toc-element topic="Home.md"/>
-    <toc-element toc-title="googlef6ff5beb2ed505cc.md" href="googlef6ff5beb2ed505cc.html" hidden="true"/>
+    <toc-element topic="googlef6ff5beb2ed505cc.md.topic"/>
     <toc-element toc-title="Linux Essentials">
         <toc-element topic="Linux-Essentials-1-Introductie.md"/>
         <toc-element topic="Command-Line-Interface.md"/>
