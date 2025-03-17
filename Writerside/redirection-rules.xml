@@ -39,4 +39,8 @@
         <description>Created after removal of "Domein en users" from Notities PXL</description>
         <accepts>WindowsAdvanced-Domein-en-users.html</accepts>
     </rule>
+    <rule id="17cf8692">
+        <description>Created after removal of "Beroepsprofielen" from Notities PXL</description>
+        <accepts>ITORG2-Beroepsprofielen.html</accepts>
+    </rule>
 </rules>
