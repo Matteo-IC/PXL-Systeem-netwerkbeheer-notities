@@ -6,7 +6,7 @@ Linux is een gratis, <tooltip term="open-source">open-source</tooltip> <tooltip 
 
 <img src="Tux.png" alt="Linux mascotte"/>
 
-*De mascotte van Linux genaamd "Tux".*
+*De mascotte van Linux, genaamd "Tux".*
 
 ## De geschiedenis van Linux
 

@@ -96,7 +96,8 @@ gebruiker@ubuntu:~$ echo hello world
 hello world
 ````
 
-**Soms heb je extra permissies nodig** om een commando uit te voeren. *Normaal mag je niet in de map `/root`.*
+**Soms heb je extra permissies nodig** om een commando uit te voeren.\
+*Normaal mag je niet in de map `/root`.*
 ````Bash
 gebruiker@ubuntu:~$ ls /root
 ls: cannot ​open directory '/root': Permission denied
