@@ -40,6 +40,14 @@ een gefundeerde beslissing maken tussen beiden
   - **Beperkte functionaliteiten**
   - **Complex** om te **integreren** met andere software
 
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**Maatwerk** is **software** die **volledig op maat** van het bedrijf gemaakt is.
+
 **Maatwerk:**
 - **Pluspunten:**
   - **Volledig** op **maat** van het bedrijf
@@ -48,7 +56,3 @@ een gefundeerde beslissing maken tussen beiden
   - **Duurder** dan standaardpakketten
   - **Aanpassingen zelf implementeren**
   - Vanaf **nul beginnen**
-  
-
-
-

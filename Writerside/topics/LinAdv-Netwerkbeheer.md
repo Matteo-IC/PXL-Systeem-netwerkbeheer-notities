@@ -13,7 +13,8 @@ $ nmcli connection show ----------> Toont alle netwerkverbindingen
                    up <naam> -----> Activeer een netwerkverbinding
                    down <naam> ---> Deactiveer een netwerkverbinding
                    delete <naam> -> Verwijder een netwerkverbinding
-                   edit <naam> ---> Bewerk een netwerkverbinding
+                   edit <naam> ---> Bewerk interactief een netwerkverbinding
+                   modify <naam> -> Bewerk een netwerkverbinding
 ```
 
 Het **ip route** commando toont de **routing tabel** en kan deze bewerken.
