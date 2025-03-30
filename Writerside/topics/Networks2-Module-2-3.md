@@ -14,7 +14,8 @@ apparaten via één kabel ergens mee verbonden zijn, dan zitten ze in een collis
 
 ## VLAN's
 
-**VLAN:** Een groep van apparaten die **fysiek verbonden** zijn, maar **virtueel gescheiden** zijn.
+**VLAN:** Een groep van apparaten die **virtueel gescheiden** zijn van een andere groep apparaten,
+maar **fysiek allemaal verbonden** zijn.
 
 **Waarom:**
 - **Betere beveiliging**
