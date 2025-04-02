@@ -2,15 +2,25 @@
 
 ## Switching in Networking
 
-**Flooding:** Wanneer een **unicast naar alle poorten** wordt gestoord behalve naar de ontvangst poort. Wordt gebruikt als
-een switch een MAC adres niet kent.
+**Flooding:** Wanneer een **unicast naar alle poorten** wordt gestuurd behalve naar de ontvangst poort. Wordt gebruikt als
+een switch een MAC-adres niet kent.
 
 **Ingress:** De **poort** waar een frame **binnenkomt**.\
 **Egress:** De **poort** waar een frame **verstuurd wordt**.
 
 **Collision domain:** De **area** (in een logische topology) **waar, als een collision gebeurt** alle **apparaten tijdelijk
-moeten wachten met communicatie**. Dit kan meerdere apparaten bevatten, maar is ook bij elke kabel. Als er dus een aantal
-apparaten via één kabel ergens mee verbonden zijn, dan zitten ze in een collision domain.
+moeten wachten met communicatie**.
+
+*Een collision kan alleen gebeuren als de switch port in half-duplex mode staat.*
+
+**Broadcast domain:** Een **groep van apparaten** die **elkaar kunnen bereiken** door een **broadcast**.
+
+## Switch forwarding methodes
+
+**Store and forward:** De switch **ontvangt het volledige frame**, 
+voert een **CRC** uit en **verstuurt** het **als alles in orde is**.
+
+**Cut through:** De switch doet **geen CRC** en **verstuurt het frame** zodra het de **bestemming MAC-adres** heeft gelezen.
 
 ## VLAN's
 
@@ -36,7 +46,7 @@ maar **fysiek allemaal verbonden** zijn.
     - VLAN ID 1
 - **Data VLAN**
     - Om netwerk verkeer van gebruikers te scheiden
-    - Scheid het netwerk in groepen van gebruikers of apparaten
+    - Scheidt het netwerk in groepen van gebruikers of apparaten
 - **Native VLAN**
     - Untagged frame
     - Voor netwerk verkeer dat geen tag heeft
@@ -63,8 +73,8 @@ maar **fysiek allemaal verbonden** zijn.
 
 ## VLAN trunks
 
-Een VLAN kan niet over een andere VLAN.\
-Stel dat er één poort is die maar één VLAN mag gebruiken, maar andere nodig hebben.
+Een **VLAN kan niet dezelfde kabels gebruiken als een andere VLAN**.\
+Stel dat er één poort is op een switch die maar één VLAN mag gebruiken, maar andere nodig hebben.
 
 In dat scenario wordt een **trunk** gebruikt. Een trunk **laat meer dan één VLAN op een poort toe**.\
 Dit gebruikt het **IEEE 802.1Q** protocol (uitgesproken als "dot one q").

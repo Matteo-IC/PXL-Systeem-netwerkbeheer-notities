@@ -23,6 +23,16 @@ Het OS initialiseert daarna de interfaces via de commands in het startup-config 
 
 Het `show boot` commando toont welke boot files gebruikt wordt.
 
+## Switch management access
+
+**Standaard** wordt de switch **geconfigureerd via VLAN 1**.\
+Voor **veiligheid** kan dit **veranderd** worden naar een **andere VLAN**.
+
+De **andere VLAN** moet wel een **IP-adres en default gateway** hebben voor remote configuratie.
+
+**SVI (Switch Virtual Interface):** Een virtueel **interface** (layer 3) dat **gekoppeld** is **aan** een **VLAN en** aan die VLAN
+**layer 3 connectiviteit geeft**.
+
 ## Connectie
 
 ### Poort communicatie
@@ -50,7 +60,7 @@ Bepaalde kabels moeten gebruikt worden in specifieke scenarios:\
 
 **Auto-MDIX** lost problemen op door **automatisch de connectie aan te passen aan de kabel**.
 
-Commando om dit aan te zetten:
+Commando op een interface om dit aan te zetten:
 ```
 S1(config-if)# mdix auto
 ```
