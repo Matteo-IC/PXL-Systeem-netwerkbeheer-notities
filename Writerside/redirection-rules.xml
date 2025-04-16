@@ -43,4 +43,8 @@
         <description>Created after removal of "Beroepsprofielen" from Notities PXL</description>
         <accepts>ITORG2-Beroepsprofielen.html</accepts>
     </rule>
+    <rule id="34deda2f">
+        <description>Created after removal of "Empty XML Topic" from Notities PXL</description>
+        <accepts>Empty-XML-Topic.html</accepts>
+    </rule>
 </rules>

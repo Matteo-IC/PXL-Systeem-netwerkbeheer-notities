@@ -30,3 +30,79 @@ $ sudo dnf install -y httpd
 $ sudo systemctl start httpd
 $ sudo systemctl enable httpd
 ```
+
+**Standaard zoekt** Apache naar website bestanden **in de map** `/var/www/html/`.\
+Om **meerdere websites** te kunnen draaien, moet je de **configuratie aanpassen**.
+
+Dit **doe je door** een **configuratiebestand** aan te **maken** in de map `/etc/httpd/conf.d/` met de **extensie** `.conf`.
+
+### Voorbeeld
+
+**Maak** een **configuratiebestand** aan voor de 1ste website:
+```
+$ sudo nano /etc/httpd/conf.d/website1.conf
+<VirtualHost *:80>
+    ServerAdmin webmaster@pxl.lan
+    ServerName webserverXX.pxl.lan
+    ServerAlias www.webserverXX.pxl.lan
+    DocumentRoot /var/www/html/website1/
+    DirectoryIndex index.php index.html index.htm
+</VirtualHost>
+```
+
+**Maak** de **map** aan voor de website & de **index.html**:
+```
+$ sudo mkdir /var/www/html/website1
+$ sudo nano /var/www/html/website1/index.html
+<html>
+    <head>
+        <title>website 1</title>
+    </head>
+    <body>
+        <h1>website 1</h1>
+    </body>
+</html>
+```
+
+**Maak** een **configuratiebestand** aan voor de 2de website:
+```
+$ sudo nano /etc/httpd/conf.d/website2.conf
+<VirtualHost *:80>
+    ServerAdmin webmaster@pxl.lan
+    ServerName webserver2XX.pxl.lan
+    ServerAlias www.webserver2XX.pxl.lan
+    DocumentRoot /var/www/html/website2/
+    DirectoryIndex index.php index.html index.htm
+</VirtualHost>
+```
+
+**Maak** de **map** aan voor de website & de **index.html**:
+```
+$ sudo mkdir /var/www/html/website2
+$ sudo nano /var/www/html/website2/index.html
+<html>
+    <head>
+        <title>website 2</title>
+    </head>
+    <body>
+        <h1>website 2</h1>
+    </body>
+</html>
+```
+
+**Pas** de **DNS** aan:
+```
+$ sudo nano /etc/named/pxl.lan.db
+...
+webserverXX      IN	   A	   10.10.10.1
+www.webserverXX  IN	   CNAME   webserverXX.pxl.lan.
+webserver2XX     IN    A       10.10.10.1
+www.webserver2XX IN    CNAME   webserver2XX.pxl.lan.
+```
+
+**Herstart** de **DNS**:
+```
+$ sudo systemctl restart named
+```
+
+
