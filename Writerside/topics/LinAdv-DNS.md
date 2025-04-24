@@ -30,13 +30,13 @@ De student(e)
 
 **Installeer** de DNS-server:
 ```
-$ sudo apt install bind
+$ sudo dnf install bind
 ```
 
 **Start** en **enable** de DNS-server:
 ```
-$ sudo systemctl start bind
-$ sudo systemctl enable bind
+$ sudo systemctl start named
+$ sudo systemctl enable named
 ```
 
 **Open** de **configuratie**:
