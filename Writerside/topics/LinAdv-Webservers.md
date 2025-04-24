@@ -31,22 +31,24 @@ $ sudo systemctl start httpd
 $ sudo systemctl enable httpd
 ```
 
-**Standaard zoekt** Apache naar website bestanden **in de map** `/var/www/html/`.\
-Om **meerdere websites** te kunnen draaien, moet je de **configuratie aanpassen**.
+**Standaard zoekt** Apache naar website bestanden **in de map** `/var/www/html/`.
 
+Om **meerdere websites op hetzelfde systeem** te kunnen draaien, moet je een **configuratie bestand per website** maken.\
 Dit **doe je door** een **configuratiebestand** aan te **maken** in de map `/etc/httpd/conf.d/` met de **extensie** `.conf`.
 
 ### Voorbeeld
 
-**Maak** een **configuratiebestand** aan voor de 1ste website:
+*2 simpele websites aanmaken op hetzelfde systeem.*
+
+**Maak** het **configuratiebestand** aan voor de 1ste website:
 ```
 $ sudo nano /etc/httpd/conf.d/website1.conf
 <VirtualHost *:80>
-    ServerAdmin webmaster@pxl.lan
-    ServerName webserverXX.pxl.lan
-    ServerAlias www.webserverXX.pxl.lan
+    ServerAdmin admin@website1.mic.lan
+    ServerName www.website1.mic.lan
+    ServerAlias *.website1.mic.lan
     DocumentRoot /var/www/html/website1/
-    DirectoryIndex index.php index.html index.htm
+    DirectoryIndex index.html
 </VirtualHost>
 ```
 
@@ -64,15 +66,15 @@ $ sudo nano /var/www/html/website1/index.html
 </html>
 ```
 
-**Maak** een **configuratiebestand** aan voor de 2de website:
+**Maak** het **configuratiebestand** aan voor de 2de website:
 ```
 $ sudo nano /etc/httpd/conf.d/website2.conf
 <VirtualHost *:80>
-    ServerAdmin webmaster@pxl.lan
-    ServerName webserver2XX.pxl.lan
-    ServerAlias www.webserver2XX.pxl.lan
+    ServerAdmin admin@website2.mic.lan
+    ServerName www.website2.mic.lan
+    ServerAlias *.website2.mic.lan
     DocumentRoot /var/www/html/website2/
-    DirectoryIndex index.php index.html index.htm
+    DirectoryIndex index.html
 </VirtualHost>
 ```
 
@@ -92,17 +94,31 @@ $ sudo nano /var/www/html/website2/index.html
 
 **Pas** de **DNS** aan:
 ```
-$ sudo nano /etc/named/pxl.lan.db
+$ sudo nano /etc/named/mic.lan.db
 ...
-webserverXX      IN	   A	   10.10.10.1
-www.webserverXX  IN	   CNAME   webserverXX.pxl.lan.
-webserver2XX     IN    A       10.10.10.1
-www.webserver2XX IN    CNAME   webserver2XX.pxl.lan.
+website1      IN	A	    10.10.10.1
+www.website1  IN	CNAME   website1.mic.lan.
+website2      IN    A       10.10.10.1
+www.website2  IN    CNAME   website2.mic.lan.
 ```
 
 **Herstart** de **DNS**:
 ```
 $ sudo systemctl restart named
 ```
+
+**Check** of de namen **gevonden worden**.
+```
+$ nslookup website1.mic.lan
+$ ...
+```
+
+**Herstart Apache.**
+```
+$ sudo systemctl restart httpd
+```
+
+### Extra uitleg
+
 
 

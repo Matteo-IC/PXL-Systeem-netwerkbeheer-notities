@@ -75,11 +75,11 @@ $ sudo systemctl restart named
 ```
 $ sudo nano /etc/named.conf
 ...
-zone "pxl.lan" {
+zone "mic.lan" {
 # ^ De naam van de zone
     type master;
     # ^ Betekent dat dit de primaire DNS-server is
-    file "/etc/named/pxl.lan.db";
+    file "/etc/named/mic.lan.db";
     # ^ Het bestand met de zone-informatie
     allow-query { any; };
     # ^ Wie mag de zone-informatie opvragen
@@ -89,25 +89,23 @@ zone "pxl.lan" {
 ```
 
 ```
-$ sudo nano /etc/named/pxl.lan.db
+$ sudo nano /etc/named/mic.lan.db
 
 $TTL    8h
-@       IN      SOA     ns1.pxl.lan.    administrator.pxl.lan. (
-                       	2025031701      ;
+@       IN      SOA     ns1.mic.lan.    administrator.mic.lan. (
+                       	2025042401      ;
                        	1d              ;
                        	3h              ;
                        	3d              ;
                        	3h )            ;
  
-       	IN      NS      ns1.pxl.lan.
-       	IN      MX      10      mail.pxl.lan.
+       	IN      NS      ns1.mic.lan.
+       	IN      MX      10      mail.mic.lan.
  
 www     IN      A       10.10.10.30
 ns1     IN      A       10.10.10.1
 mail    IN      A       10.10.10.40
-webserverGF     IN      A       10.10.10.1
- 
-pxl.lan.  IN  TXT    "Dit is een test tekst."
+webserverMIC     IN      A       10.10.10.1
 ```
 
 <tabs>
@@ -118,16 +116,16 @@ pxl.lan.  IN  TXT    "Dit is een test tekst."
     Internet.
 </tab>
 <tab title="SOA">
-    Start of Authority. Geeft de primaire zone aan.
+    Start of Authority. Bevat een aantal records.
 </tab>
-<tab title="ns1.pxl.lan">
+<tab title="ns1.mic.lan">
    De primaire DNS-server.
 </tab>
-<tab title="administrator.pxl.lan">
-   Mailadres van de beheerder van de zone.
+<tab title="administrator.mic.lan">
+   Mailadres van de beheerder van de zone. De eerste "." wordt gezien als "@".
 </tab>
-<tab title="2025031701">
-   De datum van de laatste wijziging in het formaat YYYYMMDDNN.
+<tab title="2025042401">
+   De datum van de laatste wijziging in het formaat YYYYMMDDNN. (Waar "N" het aantal aanpassingen is)
 </tab>
 <tab title="1d">
    Vernieuwingsperiode.
@@ -144,17 +142,17 @@ pxl.lan.  IN  TXT    "Dit is een test tekst."
 </tabs>
 
 <tabs>
-<tab title="MX 10">
-   De prioriteit van de mailserver. Hoe lager het nummer, hoe hoger de prioriteit.
+<tab title="NS">
+   "Name Server", de nameserver die verantwoordelijk is voor het domein.
+</tab>
+<tab title="MX">
+   De mailserver. Hoe lager het nummer achter "MX", hoe hoger de prioriteit.
 </tab>
 <tab title="A">
-   Koppelt domeinnaam aan IP-adres.
+   Koppelt domeinnaam aan IPv4-adres.
 </tab>
 <tab title="AAAA">
    Koppelt domeinnaam aan IPv6-adres.
-</tab>
-<tab title="TXT">
-   Text record.
 </tab>
 </tabs>
 
@@ -166,13 +164,13 @@ pxl.lan.  IN  TXT    "Dit is een test tekst."
 
 **Zet** de juiste **permissies** op de zone-bestanden:
 ```
-$ sudo chown root:named /etc/named/pxl.lan.db
-$ sudo chmod 640 /etc/named/pxl.lan.db
+$ sudo chown root:named /etc/named/mic.lan.db
+$ sudo chmod 640 /etc/named/mic.lan.db
 ```
 
 **Check** de **syntax**:
 ```
-$ sudo named-checkzone pxl.lan /etc/named/pxl.lan.db
+$ sudo named-checkzone mic.lan /etc/named/mic.lan.db
 ```
 
 **Herstart** de DNS-server:
@@ -197,17 +195,17 @@ zone "10.10.10.in-addr.arpa" {
 ```
 $ sudo nano /var/named/10.10.10.in-addr.arpa.zone
 $TTL 8h
-@ IN SOA ns1.pxl.lan. administrator.pxl.lan. (
+@ IN SOA ns1.mic.lan. administrator.mic.lan. (
     2025031901 ; serienummer
     1d         ; vernieuwingsperiode
     3h         ; herhalingsperiode
     3d         ; vervaltijd
     3h )       ; minimum TTL
  
-        IN NS   ns1.pxl.lan.
+        IN NS   ns1.mic.lan.
  
-1       IN PTR  ns1.pxl.lan.
-30      IN PTR  www.pxl.lan.
+1       IN PTR  ns1.mic.lan.
+30      IN PTR  www.mic.lan.
 ```
 
 **PTR**: Pointer record, koppelt IP-adres aan domeinnaam. In de plaats van domeinnaam aan IP-adres.
@@ -249,7 +247,7 @@ subnet 10.10.10.0 netmask 255.255.255.0 {
 
 Enkele commando's:
 ```
-$ dig www.pxl.lan # Normale DNS lookup
+$ dig www.mic.lan # Normale DNS lookup
 $ dig +short -x 10.10.10.30 # Reverse DNS lookup
 ```
 
