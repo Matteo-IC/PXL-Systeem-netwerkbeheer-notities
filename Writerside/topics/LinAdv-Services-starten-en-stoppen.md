@@ -173,7 +173,7 @@ Zo kan je zorgen dat die service niet start en je kan troubleshooten zonder prob
 
 ## Oefeningen
 
-1. Toon welke initialisatie daemon je server gebruikt.
+**1. Toon welke initialisatie daemon je server gebruikt.**
 ```
 [student@ServerMIC ~]$ ps -p 1
     PID TTY          TIME CMD
@@ -187,7 +187,7 @@ Het commando ps toont processen, `-p 1` toont het proces met PID 1.
 </format>
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 
-2. Welk commando kan je gebruiken om de status van je ssh daemon te bepalen?
+**2. Welk commando kan je gebruiken om de status van je ssh daemon te bepalen?**
 ```
 [student@ServerMIC ~]$ sudo systemctl status sshd
 [sudo] wachtwoord voor student:
@@ -203,7 +203,7 @@ Via `systemctl status` kan je de status zien van een service.
 </format>
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 
-3. Bepaal de vorige en het huidige runlevel.
+**3. Bepaal de vorige en het huidige runlevel.**
 ```
 [student@ServerMIC ~]$ who -r
          run-level 5  2025-02-18 13:31
@@ -216,7 +216,7 @@ Toont het huidige runlevel.
 </format>
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 
-4. Hoe kan je de standaard target unit op je Linux systeem wijzigen?
+**4. Hoe kan je de standaard target unit op je Linux systeem wijzigen?**
 ```
 [student@ServerMIC ~]$ sudo systemctl set-default <target>.target
 ```
@@ -227,7 +227,7 @@ Toont het huidige runlevel.
 </format>
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 
-5. Met welk commando list je welke services er runnen op je server?
+**5. Met welk commando list je welke services er runnen op je server?**
 ```
 [student@ServerMIC ~]$ systemctl list-units --type=service --state=running
 ```
@@ -238,7 +238,7 @@ Toont het huidige runlevel.
 </format>
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 
-6. Toon de status van de cups daemon op je Linux server.
+**6. Toon de status van de cups daemon op je Linux server.**
 ```
 [student@ServerMIC ~]$ sudo systemctl status cups
 ```
@@ -249,7 +249,7 @@ Toont het huidige runlevel.
 </format>
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 
-7. Herstart de cups daemon op je Linux server.
+**7. Herstart de cups daemon op je Linux server.**
 ```
 [student@ServerMIC ~]$ sudo systemctl restart cups
 ```
@@ -260,7 +260,7 @@ Toont het huidige runlevel.
 </format>
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 
-8. Tracht de cups daemon op je Linux server te herladen.
+**8. Tracht de cups daemon op je Linux server te herladen.**
 ```
 [student@ServerMIC ~]$ sudo systemctl restart cups
 ```
@@ -271,8 +271,8 @@ Toont het huidige runlevel.
 </format>
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 
-9. Zorg ervoor dat er standaard niet grafisch opgestart wordt. Hoe kan je ervoor zorgen dat je dan, na opstarten,
-overgaat naar een grafische omgeving.
+**9. Zorg ervoor dat er standaard niet grafisch opgestart wordt. Hoe kan je ervoor zorgen dat je dan, na opstarten,
+overgaat naar een grafische omgeving.**
 ```
 sudo systemctl set-default multi-user.target
 sudo systemctl isolate graphical.target
@@ -284,7 +284,7 @@ sudo systemctl isolate graphical.target
 </format>
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 
-10. Stel terug in dat je standaard grafisch opstart.
+**10. Stel terug in dat je standaard grafisch opstart.**
 ```
 [student@ServerMIC ~]$ sudo systemctl set-default graphical.target
 ```

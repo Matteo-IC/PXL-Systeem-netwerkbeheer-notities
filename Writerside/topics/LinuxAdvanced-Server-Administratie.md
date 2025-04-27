@@ -139,3 +139,83 @@ De **sleutel** is een **wiskundige formule** die de **encryptie ongedaan maakt**
    - **Toekomstige communicatie kan** nu **sneller** en veilig **via symmetrische encryptie**.
    - **Dit is hoe SSH werkt.**
 
+## Oefeningen
+
+**1.
+Log in bij de Linux-computer door gebruik te maken van ssh.
+Het maakt niet uit met welke account je verbinding maakt op de andere computer.**
+```
+> ssh student@192.168.206.132
+```
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**2.
+Gebruik remote execution met ssh om de inhoud van het bestand /etc/system-release op je scherm te zetten.**
+```
+$ cat /etc/system-release
+```
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**3.
+Gebruik ssh met X11 forwarding om een “gedit-windows” op het scherm te zetten op je lokaal system.
+Sla het bestand op op het systeem op afstand en toon dit aan.\
+   Met putty in Windows\
+   Met 2 Linux-systemen**
+```
+...
+```
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**4.
+Kopieer recursief alle bestanden van de /usr/share/selinux directory op het systeem op afstand naar de directory /etc op
+je lokaal systeem waarbij alle data/tijden van de bestanden moeten aangepast worden naar de tijd dat de bestanden warden
+gekopieerd. Check de data/tijden.**
+```
+$ sudo scp -r student@10.10.10.11:/usr/share/selinux/ /etc/
+$ ls -la /etc/selinux/
+```
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**5.
+Kopieer recursief alle bestanden van de /usr/share/sounds directory op het systeem op afstand naar de directory /etc op
+je lokaal systeem waarbij alle data/tijden van de bestanden behouden blijven (de data/tijden van de bestanden van het
+systeem op afstand moeten dus hetzelfde zijn voor de bestanden op je lokale systeem ).**
+```
+$ sudo rsync -avl student@10.10.10.11:/usr/share/sounds /etc
+```
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**6.
+Maak een publieke/privésleutel aan om te gebruiken met een SSH connectie (zet geen paszin op de privésleutel). 
+Kopieer de publieke sleutel naar de account op de computer op afstand met ssh-copy-id. 
+Log nu in op je systeem op afstand zonder een wachtwoord te moeten ingeven.**
+```
+$ ssh-keygen -t rsa -b 4096 -N "" -f ssh_key_client
+$ ssh-copy-id -i ssh_key_client student@10.10.10.11
+$ ssh -i ssh_key_client student@10.10.10.11
+```

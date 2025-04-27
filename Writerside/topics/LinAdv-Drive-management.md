@@ -631,7 +631,7 @@ Om **swapruimte** te **maken** heb je een **bestand nodig**:
 ```
 [student@ServerMIC ~]$ sudo fallocate -l 1G /swapfile
 ```
-*fallocate reserveert ruimte voor een bestand. Het duidt alleen het begin en einde aan zonder de content te vullen waardoor
+*`fallocate` reserveert ruimte voor een bestand. Het duidt alleen het begin en einde aan zonder de content te vullen waardoor
 het heel efficiënt is voor dit soort bestanden te maken.*
 
 Zet de **juiste rechten** op het bestand zodat **alleen root het kan lezen en schrijven**:\
@@ -693,4 +693,210 @@ Het **toont de grootte van een map en de mappen eronder**, om **enkel de map zel
 [student@ServerMIC ~]$ du -hd 1 /home/
 ```
 
+## Oefeningen
 
+**1.
+Toon hoe je de naam vindt van de drive die je wil gebruiken.**
+```
+$ lsblk
+```
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**2.
+Toon de partitietabel van de virtuele drive/USB-drive**
+```
+$ sudo gdisk /dev/sda
+[sudo] wachtwoord voor student:
+GPT fdisk (gdisk) version 1.0.7
+
+Partition table scan:
+  MBR: not present
+  BSD: not present
+  APM: not present
+  GPT: not present
+
+Creating new GPT entries in memory.
+
+Command (? for help): p
+```
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**3.
+Verwijder alle partities op de USB-drive (of hoe je dit zou doen als je een virtuele drive gebruikt).
+Sla deze veranderingen op en toon dat dit ook is aangepast in de partitietabel en de Linux kernel.**
+
+<a href="LinAdv-Drive-management.md" anchor="partitie-verwijderen">Partities verwijderen</a>
+
+```
+$ ls /lib/modules/$(uname -r)/kernel/fs
+```
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**4.
+Voeg 3 partities toe aan de drive: a. 100MB Linux partitie b. 200MB swap partitie c. 500MB LVM partitie Sla deze
+verandering op.**
+
+```
+$ sudo gdisk /dev/sda
+
+Command: n
+Partition number: Enter
+First sector: Enter
+Last sector: +100M
+Hex code: Enter        # Linux is standaard
+
+Command: n
+Partition number: Enter
+First sector: Enter
+Last sector: +200M
+Hex code: 8200         # Linux swap
+
+Command: n
+Partition number: Enter
+First sector: Enter
+Last sector: +500M
+Hex code: 8e00         # Linux LVM
+
+Command: p             # Partitie tabel
+Command: w             # Sla op
+```
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**5.
+Geef de Linux partitie een ext4 filesystem.**
+
+```
+$ sudo mkfs.ext4 /dev/sda1
+```
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**6.
+Maak een mountpoint genaamd /mnt/mypart en mount de nieuwe linux partitie hierop.**
+
+```
+$ sudo mkdir /mnt/mypart
+$ sudo mount /dev/sda1 /mnt/mypart
+```
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**7.
+Enable de swap partitie en zet deze aan zodat er extra swap ruimte bruikbaar is.**
+
+```
+$ sudo mkswap /dev/sda2
+$ sudo swapon /dev/sda2
+```
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**8.
+Maak een volumegroep genaamd ‘OefVG’ van de LVM partitie.\
+Maak daarna een logisch volume van 200MB van de groep OefVG genaamd ‘OefData’.\
+Geef het volume OefData een ext4 filesysteem.\
+Mount nu dit volume tijdelijk op een nieuwe directory genaamd ‘/mnt/oefening’.\
+Kijk of dit succesvol is gemount.**
+
+```
+$ sudo pvcreate /dev/sda3
+$ sudo vgcreate OefVG /dev/sda3
+$ sudo lvcreate -L 200M -n OefData OefVG
+$ sudo mkfs.ext4 /dev/OefVG/OefData
+$ sudo mkdir /mnt/oefening
+$ sudo mount /dev/OefVG/OefData /mnt/oefening
+$ lsblk
+```
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**9.
+Vergroot het logische volume ‘OefData’ van 200MB naar 300MB.**
+
+```
+$ sudo lvextend -L 300M /dev/OefVG/OefData
+$ sudo resize2fs /dev/OefVG/OefData # niet gevraagd maar goed (vergroot bestandssyteem)
+```
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**10.
+Doe alles wat nodig is om de USB/Drive veilig te verwijderen van de computer: a. Unmount de linux partitie
+b. Zet de swap partitie uit c. Unmount het logische volume d. Verwijder de volume groep**
+
+```
+$ sudo umount /mnt/mypart
+$ sudo swapoff /dev/sda2
+$ sudo umount /mnt/oefening
+$ sudo lvremove /dev/OefVG/OefData
+$ sudo vgremove OefVG
+$ sudo pvremove /dev/sda3
+```
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**11.
+Gebruik het commando du om de grootste mappen te tonen die zich bevinden in /usr/share. Sorteer de mappen van groot naar
+klein en lijst alleen de 10 grootste op.**
+
+```
+sudo du -sh /usr/share/* | sort -rh | head -10
+```
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**12.
+Gebruik het commando df om alle vrije ruimte te tonen van alle filesystems die momenteel verbonden zijn met je systeem, 
+maar toon de filesystems tmpfs en devtmpfs niet.**
+
+```
+$ df -h -x tmpfs -x devtmpfs
+```

@@ -183,17 +183,35 @@ Herhaal voor de 2de verbinding.
 
 ## Oefeningen
 
-**Oefening 1:**
+**1.
+Zoek uit hoe je met “ip addr” het ip-address 192.168.1.1 met als subnetmasker 255.255.255.0 kan toevoegen aan je
+netwerkkaart. Check dit ook met “ip addr”.**
 ```
 $ sudo ip a add 192.168.1.1/24 dev ens160
 ```
 
-**Oefening 2:**
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**2.
+Zoek hoe je “ip address show” met zo weinig mogelijk karakters kan uitvoeren. Je blijft het commando “ip” gebruiken.**
 ```
 $ ip a
 ```
 
-**Oefening 3:**
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**3.
+Via het commando nmcli: Maak een nieuwe connectie genaamd “Verbinding” voor je eerste netwerkkaart aan. Het IP-nummer is
+192.168.112.50/24 en de gateway is 192.168.112.2. Zet ook de DNS-servers voor“Verbinding” op 8.8.8.8 en 8.8.4.4.
+Zorg ervoor dat deze connective geactiveerd wordt via het commando nmcli.**
 ```
 $ nmcli connection add type ethernet con-name "Verbinding" ifname ens160
 $ nmcli connection modify Verbinding ipv4.addresses 192.168.112.50/24
@@ -203,22 +221,53 @@ $ nmcli connection modify Verbinding ipv4.method manual
 $ nmcli connection up Verbinding
 ```
 
-**Oefening 4:**
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**4.
+Stel in dat er automatisch verbinding wordt gemaakt met “Verbinding” en dat er niet automatisch verbinding wordt gemaakt
+met je eerste connectienaam.**
 ```
 $ nmcli connection modify Verbinding connection.autoconnect yes
 $ nmcli connection modify ens160 connection.autoconnect no
 ```
 
-**Oefening 5:**
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**5.
+Voeg een aangepaste route toe voor het netwerk 10.0.100.0/255.255.255.0 via de computer 192.168.112.200 in je eigen
+network. Gebruik hiervoor het commando nmcli.**
 ```
 $ nmcli connection modify Verbinding +ipv4.routes "10.0.100.0/24 192.168.112.200"
 $ nmcli connection up "Verbinding"
 ```
 
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
 **Oefening 6:**\
 Teaming moeten we niet meer kennen.
 
-**Oefening 7:**
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**7.
+Gebruik nmcli om een bond-interface genaamd bond0 aan te maken met de modus active-backup. Voeg twee netwerkinterfaces
+toe (ens160 en ens224). Zorg ervoor dat bond0 een statisch IP-adres van 192.168.112.50/24 krijgt met een gateway
+192.168.112.2.**
 ```
 $ nmcli connection add type bond con-name bond0 ifname bond0 mode active-backup
 $ nmcli connection add type ethernet con-name ens160 ifname ens160 master bond0
@@ -229,7 +278,15 @@ $ nmcli connection modify bond0 ipv4.method manual
 $ nmcli connection up bond0
 ```
 
-**Oefening 8:**
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**8.
+Stel een bond-interface bond1 in met lacp (IEEE 802.3ad). Zorg ervoor dat de bond correct geconfigureerd is en check de
+status met cat /proc/net/bonding/bond1.**
 ```
 $ nmcli connection add type bond con-name bond1 ifname bond1 mode 802.3ad
 $ nmcli connection add type ethernet con-name ens160 ifname ens160 master bond1
@@ -238,6 +295,49 @@ Optionele IP configuratie
 $ cat /proc/net/bonding/bond1
 ```
 
-**Oefening 9:**
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**9.
+Je hebt de volgende configuratie gemaakt voor een bond-interface (bond0), maar je krijgt geen netwerkverbinding: ...**
+
 Er is niet `con-name bond0` in het eerste commando gezet, het heet nu eigenlijk `bond-bond0`.\
 Het staat ook niet in de commando's om de verbindingen aan de bond toe te voegen.
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**10.
+Stel een active-backup bonding in via nmcli, maar zorg ervoor dat deze behouden blijft na een reboot.
+Test dit door de machine opnieuw op te starten en te controleren of de configuratie blijft bestaan.**
+
+```
+$ sudo nmcli connection add type bond con-name bond2 ifname bond2 mode active-backup
+... # Interfaces toevoegen & IP adres etc.
+$ sudo nmcli connection up bond2
+# Zou moeten werken na reboot maar niet getest
+```
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**11.
+Je hebt een werkende active-backup bond (bond0). Zorg ervoor dat het systeem altijd 8.8.8.8 en 8.8.4.4 als DNS-servers 
+gebruikt, ongeacht welke netwerkinterface actief is. Test of de instellingen persistent blijven na een reboot.**
+
+```
+$ sudo nmcli connection modify bond0 ipv4.dns "8.8.8.8 8.8.4.4"
+$ sudo nmcli connection modify bond0 ipv4.ignore-auto-dns yes
+$ sudo nmcli connection down bond0
+$ sudo nmcli connection up bond0
+$ sudo nmcli connection modify bond0 ipv4.dns-priority 10 # Misschien nodig?
+```
