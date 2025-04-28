@@ -237,6 +237,7 @@ authoritative;
 subnet 10.10.10.0 netmask 255.255.255.0 {
     range 10.10.10.10 10.10.10.30;
     option domain-name-servers 10.10.10.1;
+    option domain-name "mic.lan";
     option routers 10.10.10.1;
     default-lease-time 600;
     max-lease-time 7200;
@@ -257,3 +258,135 @@ $ sudo systemctl start httpd
 $ sudo firewall-cmd --add-service=http --zone=internal
 ```
 
+## Oefeningen
+
+**1.
+Zorg dat enkel clients in het 10.10.10.0/24 network DNS-query’s kunnen aanvragen.**
+
+```
+$ sudo nano /etc/named.conf
+options {
+    listen-on port 53 { 127.0.0.1; 10.10.10.1; };
+    allow-query     { localhost; 10.10.10.0/24; }; # deze lijn
+    allow-recursion { localhost; 10.10.10.0/24; }; # en deze lijn
+    forwarders { 8.8.8.8; 8.8.4.4; };
+    ...
+```
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**2.
+Forward DNS-query’s naar de dns-services van google (8.8.8.8, 8.8.4.4).**
+
+```
+$ sudo nano /etc/named.conf
+options {
+    listen-on port 53 { 127.0.0.1; 10.10.10.1; };
+    allow-query     { localhost; 10.10.10.0/24; };
+    allow-recursion { localhost; 10.10.10.0/24; };
+    forwarders { 8.8.8.8; 8.8.4.4; }; # deze lijn
+    ...
+```
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**3.
+Zorg dat Server[JouwInitialen] en Client[JouwInitialen] door je DNS vertaald worden naar de IP adressen van jouw Server
+en Client. Tip: voeg hun toe aan domein .pxl.lan (hostname)**
+
+```
+$ sudo nano /etc/named.conf
+...
+zone "mic.lan" {
+    type master;
+    file "/etc/named/mic.lan.db";
+    allow-query { any; };
+    allow-transfer { none; };
+};
+
+$ sudo nano /etc/named/mic.lan.db
+$TTL    8h
+@       IN      SOA     ns1.mic.lan.    administrator.mic.lan. (
+                       	2025042401      ;
+                       	1d              ;
+                       	3h              ;
+                       	3d              ;
+                       	3h )            ;
+
+       	IN      NS      ns1.mic.lan.
+       	IN      MX      10      mail.mic.lan.
+
+www     IN      A       10.10.10.30
+ns1     IN      A       10.10.10.1
+mail    IN      A       10.10.10.40
+ServerMIC     IN      A       10.10.10.1
+ClientMIC     IN      A       10.10.10.2
+
+$ sudo chown root:named /etc/named/mic.lan.db
+$ sudo chmod 640 /etc/named/mic.lan.db
+$ sudo named-checkzone mic.lan /etc/named/mic.lan.db
+$ sudo systemctl restart named
+```
+
+*Client:*
+```
+$ sudo nmcli connection modify "Wired Connection 1" ipv4.dns "10.10.10.1"
+$ sudo nmcli connection modify "Wired Connection 1" ipv4.dns-search "mic.lan"
+$ sudo nmcli connection up "Wired Connection 1"
+```
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**4.
+Zorg dat je DHCP-server jouw nieuwe DNS server deelt.**
+
+```
+$ sudo nano /etc/dhcp/dhcpd.conf
+ddns-update-style none;
+authoritative;
+ 
+subnet 10.10.10.0 netmask 255.255.255.0 {
+    range 10.10.10.10 10.10.10.30;
+    option domain-name-servers 10.10.10.1;
+    option domain-name "mic.lan";
+    option routers 10.10.10.1;
+    default-lease-time 600;
+    max-lease-time 7200;
+}
+$ sudo systemctl restart dhcpd
+```
+
+*Client:*
+```
+$ cat /etc/resolv.conf # check of het werkt (connection eerst herstarten)
+```
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+**5.
+Test met dig en door te pingen naar Server[JouwInitialen] en Client[JouwInitialen] dat je DNS via DHCP werkt.**
+
+```
+$ dig ServerMIC.mic.lan
+$ dig ClientMIC.mic.lan
+$ dig google.com
+$ ping ServerMIC.mic.lan
+$ ping ClientMIC.mic.lan
+$ dig +trace google.com # toont welke dns server gebruikt wordt
+```

@@ -130,14 +130,14 @@ De **sleutel** is een **wiskundige formule** die de **encryptie ongedaan maakt**
 ### Tegelijk
 
 1. **Apparaat 1 maakt** een willekeurige **symmetrische sleutel**.
-2. **Apparaat 1 encrypteert de sleutel met** de **publieke sleutel van apparaat 2**.
+2. **Apparaat 1 encrypteert de sleutel met** de **publieke sleutel van apparaat 2** (asymmetrische encryptie).
 3. **Apparaat 1 stuurt** deze geëncrypteerde **sleutel naar apparaat 2**.
 4. **Apparaat 2 decrypteert** de **sleutel met** zijn **privésleutel**.
 5. Ze **hebben nu allebei** veilig de **symmetrische sleutel**.
    - **Asymmetrisch is trager** dan symmetrisch.
    - Het **probleem met symmetrische** encryptie is **opgelost**.
    - **Toekomstige communicatie kan** nu **sneller** en veilig **via symmetrische encryptie**.
-   - **Dit is hoe SSH werkt.**
+   - **Dit is hoe SSH & HTTPS werken.**
 
 ## Oefeningen
 
