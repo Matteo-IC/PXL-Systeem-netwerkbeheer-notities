@@ -124,7 +124,7 @@ $ sudo systemctl restart httpd
 ## Oefeningen
 
 **1.
-Je creëert 2 virtuele hosts die luisteren op de poorten 41347 en 1321. De server heeft als naam <jevoornaam>.local.
+Je creëert 2 virtuele hosts die luisteren op de poorten 41347 en 1321. De server heeft als naam `<jevoornaam>.local`.
 Geef aan hoe je dit gedaan hebt (commando’s / aanpassingen bestanden). De website die draait op poort 41347 geef je als
 inhoud je voornaam. De website die draait op poort 1321 geef je als inhoud je achternaam. Je dient uiteraard ook je
 resultaat te staven met screenshots.**
@@ -180,9 +180,9 @@ $ curl matteo.local:1321
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 
 **2.
-Creëer 2 virtual hosts die luisteren op een ander ip-address. Het ene IP-adres koppel je aan <jevoornaam>.local en de
-andere koppel je aan <jeachternaam>.local. Je dient de ip-nummers in te stellen via de command line interface.
-Als inhoud geef de website <jevoornaam>.local je eigen voornaam en de website <jeachternaam>.local je eigen achternaam.
+Creëer 2 virtual hosts die luisteren op een ander ip-address. Het ene IP-adres koppel je aan `<jevoornaam>.local` en de
+andere koppel je aan `<jeachternaam>.local`. Je dient de ip-nummers in te stellen via de command line interface.
+Als inhoud geef de website `<jevoornaam>.local` je eigen voornaam en de website `<jeachternaam>.local` je eigen achternaam.
 Je dient uiteraard ook je resultaat te staven met screenshots.**
 
 ```
