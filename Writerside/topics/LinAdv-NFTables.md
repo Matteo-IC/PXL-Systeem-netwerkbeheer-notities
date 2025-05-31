@@ -3,7 +3,7 @@
 ## Oefeningen
 
 **1. Zorg ervoor dat er ‘vanaf de eerste seconde’ maar 1 ping-aanvraag per seconde mag verstuurd worden vanuit het
-lokale netwerk (client<jeintialen>) zoals je hieronder ziet.**
+lokale netwerk (client&lt;jeintialen&gt;) zoals je hieronder ziet.**
 ```
 $ sudo nft flush ruleset
 $ sudo nft add table ip filter
