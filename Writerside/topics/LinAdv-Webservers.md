@@ -118,9 +118,6 @@ $ ...
 $ sudo systemctl restart httpd
 ```
 
-### Extra uitleg
-
-
 ## Oefeningen
 
 **1.
