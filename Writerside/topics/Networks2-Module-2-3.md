@@ -22,7 +22,7 @@ voert een **CRC** uit en **verstuurt** het **als alles in orde is**.
 
 **Cut through:** De switch doet **geen CRC** en **verstuurt het frame** zodra het de **bestemming MAC-adres** heeft gelezen.
 
-## VLAN's
+## VLANs
 
 **VLAN:** Een groep van apparaten die **virtueel gescheiden** zijn van een andere groep apparaten,
 maar **fysiek allemaal verbonden** zijn.
@@ -59,14 +59,14 @@ maar **fysiek allemaal verbonden** zijn.
 
 ## VLAN configuratie
 
-**Normal range VLAN's:**
+**Normal range VLANs:**
 - Gebruikt in klein tot middelgrote bedrijven
 - Configuratie wordt opgeslagen in flash memory
 - VLAN ID 1 - 1005
 - ID 1002 - 1005 zijn gereserveerd voor oude technologieën
 - ID 1 & 1002 - 1005 kunnen niet verwijderd worden
 
-**Extended range VLAN's:**
+**Extended range VLANs:**
 - VLAN ID 1006 - 4094
 - Gebruikt door grote bedrijven
 - Configuratie wordt opgeslagen in running-config
