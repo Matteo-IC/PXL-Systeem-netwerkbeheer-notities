@@ -8,8 +8,8 @@ Dit gebeurt wanneer **switches** met **redundante paden** bijvoorbeeld een **bro
 en deze **doorsturen naar** alle **andere poorten**.
 
 Maar als het **broadcast frame** dan terugkomt bij een **switch** die het **broadcast frame al** heeft **ontvangen**,
-komt het **frame** van een **andere poort** en **wordt het frame weer doorgestuurd**.\
-Zo gaat het **frame** **oneindig** door het **netwerk** tot deze **plat ligt**.
+komt het **frame** van een **andere poort** en wordt het **frame weer doorgestuurd door alle egress poorten**.\
+Zo gaat het **frame** **oneindig** door en **vermenigvuldigt het zichzelf** in het **netwerk** tot deze **plat ligt**.
 
 ## STP
 

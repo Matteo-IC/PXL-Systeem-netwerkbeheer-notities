@@ -202,10 +202,10 @@ VLAN10 VLAN20 VLAN30
     </tr>
     <tr>
         <td>Ontbrekende VLANs</td>
-        <td>Maak ontbrekende VLANs aan.<br>
+        <td>Maak ontbrekende VLANs aan.<br></br>
             Zorg dat de VLANs op de juiste poorten zijn.
         </td>
-        <td><code>show vlan brief</code><br>
+        <td><code>show vlan brief</code><br></br>
             <code>show interfaces switchport</code>
         </td>
     </tr>
@@ -216,10 +216,10 @@ VLAN10 VLAN20 VLAN30
     </tr>
     <tr>
         <td>Switch access poort</td>
-        <td>Zet de juiste VLAN op de juiste poort<br>
+        <td>Zet de juiste VLAN op de juiste poort<br></br>
             Zorg dat de poort in access mode staat.
         </td>
-        <td><code>show interfaces switchport</code><br>
+        <td><code>show interfaces switchport</code><br></br>
             <code>show running-config interface</code>
         </td>
     </tr>
