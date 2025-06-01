@@ -157,13 +157,11 @@ DP - ╭└─────────┘╮     │
  │Switch │   │Switch │ │
  │   C   │───│   D   │─╯
  └───────┘   └───────┘
-             │
-             DP
     </code-block>
 </tab>
 <tab title="4. Geblokkeerde Poorten">
     <p>Als een poort <control>geen designated of root poort</control> is, 
-    <control>wordt</control> deze <control>geblokkeerd</control></p>
+    <control>wordt</control> deze <control>geblokkeerd</control>.</p>
     <code-block>
 ⠀
       ┌─────────┐
