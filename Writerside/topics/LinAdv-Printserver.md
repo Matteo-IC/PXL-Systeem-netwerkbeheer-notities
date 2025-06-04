@@ -6,7 +6,6 @@
 duidelijk is dat dit werkt. Laat ook via een screenshot zien dat je op de Windows computer een gebruiker bijmaakt met
 als naam <je_initialen>.**
 
-
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 <format style="underline">
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
