@@ -185,3 +185,42 @@ DP - ╭└─────────┘╮     │
     </tip>
 </tab>
 </tabs>
+
+### Poort statussen
+
+<table>
+    <tr>
+        <td>Poort status</td>
+        <td>Beschrijving</td>
+    </tr>
+    <tr>
+        <td>Disabled</td>
+        <td>De poort is <control>administratief uitgezet</control>. Het stuurt geen frames door en doet niet mee aan STP.</td>
+    </tr>
+    <tr>
+        <td>Blocking</td>
+        <td>De poort is <control>geblokkeerd door STP</control>. Het stuurt geen frames door, maar 
+        <control>luistert wel naar BPDUs</control>. Als de poort na <control>20 seconden geen BPDU</control> heeft 
+        ontvangen (Max Age timer) gaat die naar de <control>"listening" status</control>.</td>
+    </tr>
+    <tr>
+        <td>Listening</td>
+        <td>De poort <control>luistert naar BPDU frames</control> om te <control>beslissen</control> wat het 
+        <control>beste pad</control> is <control>naar de root bridge</control>. Het stuurt ook zijn eigen BPDUs.</td>
+    </tr>
+    <tr>
+        <td>Learning</td>
+        <td>De poort <control>ontvangt en verwerkt BPDUs</control>. Het bereidt zich ook voor om frames door te sturen. 
+        Daarnaast begint het met de MAC adres tabel in te vullen.</td>
+    </tr>
+    <tr>
+        <td>Forwarding</td>
+        <td>De poort <control>stuurt frames door</control> en <control>luistert naar BPDUs</control>. 
+        Het is de <control>actieve status</control>.</td>
+    </tr>
+</table>
+
+### PVST
+
+**Per VLAN Spanning Tree (PVST)** is een **uitgebreide versie van STP** die **per VLAN** een **eigen spanning tree** heeft.\
+Dit betekent dat **elke VLAN** zijn eigen **root bridge**, **root poorten** en **designated poorten** heeft.

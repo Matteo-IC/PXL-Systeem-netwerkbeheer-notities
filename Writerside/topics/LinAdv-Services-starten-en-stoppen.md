@@ -262,7 +262,7 @@ Toont het huidige runlevel.
 
 **8. Tracht de cups daemon op je Linux server te herladen.**
 ```
-[student@ServerMIC ~]$ sudo systemctl restart cups
+[student@ServerMIC ~]$ sudo systemctl reload cups
 ```
 
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->

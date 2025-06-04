@@ -67,7 +67,8 @@ sda
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 
 In **`/etc/fstab`** staan **partities en schijven**. Elke regel bevat 6 dingen:
-1. Een **ID** voor de partitie of het apparaat:
+1. Een **ID** voor de partitie of het apparaat:\
+*Kan ook een pad zijn in `/dev` zoals `/dev/sda1`.*
 ```
 UUID=1234-5678  /home  ext4  defaults,noatime  0  2
 ^^^^^^^^^^^^^^
@@ -87,7 +88,7 @@ UUID=1234-5678  /home  ext4  defaults,noatime  0  2
 UUID=1234-5678  /home  ext4  defaults  0  2
                              ^^^^^^^^
 ```
-5. Is een **verouderd** deel, op 0 zetten:
+5. Wordt gebruikt door `dump`, **op 0 zetten**:
 ```
 UUID=1234-5678  /home  ext4  defaults,noatime  0  2
                                                ^
@@ -154,7 +155,7 @@ Veel gebruikte commando's in gdisk:
 
 1. **n:** Maak nieuwe partitie
 2. **enter:** Gebruik standaard partitie nummer
-3. **enter:** Gebruik standaard voor standaard 1ste sector
+3. **enter:** Gebruik standaard voor 1ste sector
 4. **enter:** Gebruik standaard laatste sector *(om de heel schijf te gebruiken)*
 5. **enter:** Gebruik standaard GUID
 6. **w:** Maak de veranderingen

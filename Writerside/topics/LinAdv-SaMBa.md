@@ -152,4 +152,4 @@ $ sudo firewall-cmd --reload
 **5. Pas oefening 4 aan zodat je vanaf je Windows op je computer zelf (de Windows waarop je VMware hebt geïnstalleerd) 
 toegang krijgt tot de shares. Maak ook een screenshot van je resultaat.**
 
-Network adapter van de VM moet op Bridged staan.
+In Windows doe `Windows + R` en typ `\\192.168.112.100\share2`.

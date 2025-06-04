@@ -162,6 +162,8 @@ $ sudo nano /etc/httpd/conf.d/ic-1321.conf
 $ sudo chown -R apache:apache /var/www/html/matteo-41347
 $ sudo chown -R apache:apache /var/www/html/ic-1321
 $ sudo chmod -R 755 /var/www/html/
+$ sudo semanage port -a -t http_port_t -p tcp 1321
+$ sudo semanage port -a -t http_port_t -p tcp 41347
 $ sudo systemctl restart httpd
 $ sudo firewall-cmd --permanent --add-port=41347/tcp
 $ sudo firewall-cmd --permanent --add-port=1321/tcp
@@ -183,12 +185,8 @@ Als inhoud geef de website `<jevoornaam>.local` je eigen voornaam en de website 
 Je dient uiteraard ook je resultaat te staven met screenshots.**
 
 ```
-$ nmcli connection add type ethernet con-name web1 ifname ens160
-$ nmcli connection modify web1 ipv4.addresses 10.10.10.101/24
-$ nmcli connection add type ethernet con-name web2 ifname ens160
-$ nmcli connection modify web2 ipv4.addresses 10.10.10.102/24
-$ sudo nmcli connection up web1
-$ sudo nmcli connection up web2
+$ sudo ip addr add 10.10.10.101/24 dev ens160
+$ sudo ip addr add 10.10.10.102/24 dev ens160
 $ sudo mkdir /var/www/html/matteo-site
 $ sudo mkdir /var/www/html/ic-site
 $ sudo nano /var/www/html/matteo-site/index.html # Voeg "Matteo" toe

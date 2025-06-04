@@ -155,8 +155,6 @@ Gebruiker    Rol           Type        MLS Level
 context kan lezen.**
 ```
 $ > test.html
-$ sudo setsebool httpd_enable_homedirs on
-$ sudo setsebool httpd_read_user_content on
 $ sudo chcon -t httpd_user_content_t test.html
 $ sudo restorecon test.html
 ```
@@ -169,7 +167,7 @@ $ sudo restorecon test.html
 
 **2. Pas SELinux zodanig aan dat het httpd bestanden uit je homedirectory permanent kan lezen.**
 ```
-$ sudo setsebool -P httpd_enable_homedirs 1
+$ sudo setsebool -P httpd_enable_homedirs on
 ```
 
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
@@ -180,7 +178,7 @@ $ sudo setsebool -P httpd_enable_homedirs 1
 
 **3. Zorg ervoor dat httpd mails kan versturen.**
 ```
-$ sudo setsebool -P httpd_can_sendmail 1
+$ sudo setsebool -P httpd_can_sendmail on
 ```
 
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
@@ -205,4 +203,9 @@ $ sudo restorecon -Rv /var/www/html/platform
 **5. Je wil SELinux alleen in loggende modus gebruiken. Hoe stel je dit in?**
 ```
 $ sudo setenforce 0
+```
+```
+$ sudo nano /etc/selinux/config
+...
+SELINUX=permissive
 ```
