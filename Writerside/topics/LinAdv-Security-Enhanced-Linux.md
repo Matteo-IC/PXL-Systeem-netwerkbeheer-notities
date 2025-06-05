@@ -148,6 +148,82 @@ Gebruiker    Rol           Type        MLS Level
 </tab>
 </tabs>
 
+## Commando's
+
+`getenforce` toont de huidige modus van SELinux.
+```
+$ getenforce
+Enforcing
+```
+
+`setenforce` verandert tijdelijk de modus van SELinux.
+```
+$ sudo setenforce 0 # Permissive
+$ sudo setenforce 1 # Enforcing
+```
+
+`sestatus` toont de gedetailleerde status van SELinux.
+```
+$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      33
+```
+
+`getsebool -a` toont SELinux booleans.
+```
+$ getsebool -a
+abrt_anon_write --> off
+abrt_handle_event --> off
+abrt_upload_watch_anon_write --> on
+...
+$ getsebool -a | grep httpd
+httpd_anon_write --> off
+httpd_builtin_scripting --> on
+httpd_can_check_spam --> off
+...
+```
+
+`setsebool` wijzigt SELinux booleans.
+```
+$ sudo setsebool httpd_can_network_connect on # tijdelijk
+$ sudo setsebool -P httpd_can_network_connect on # permanent
+```
+
+`ls -Z` toont de SELinux context van bestanden en mappen.
+```
+$ ls -Z /var/www/html
+drwxr-xr-x. root root unconfined_u:object_r:httpd_sys_content_t:s0 index.html
+```
+
+`restorecon` herstelt de SELinux context van bestanden en mappen naar de standaard context.
+```
+$ sudo restorecon -Rv /var/www/html # recursief en gedetailleerd
+```
+
+`chcon` wijzigt tijdelijk de SELinux context van een bestand of map.
+```
+$ sudo chcon -t httpd_sys_content_t /var/www/html/index.html
+```
+
+`semanage` wordt gebruikt om SELinux contexten en booleans aan te passen.
+```
+$ sudo semanage fcontext -l # lijst van SELinux contexten
+$ sudo semanage fcontext -a -t httpd_sys_content_t "/var/www/html/index.html" # voeg context toe
+$ sudo semanage fcontext -a -t httpd_sys_content_t "/var/www/html(/.*)?" # voeg context toe voor map en submappen
+```
+
+`sealert -a /var/log/audit/audit.log` analyseert SELinux logs en geeft suggesties voor oplossingen.
+```
+$ sudo sealert -a /var/log/audit/audit.log
+```
 
 ## Oefeningen
 
