@@ -332,11 +332,6 @@
 </def>
 </deflist>
 
-<deflist>
-<def title="">
-</def>
-</deflist>
-
 ## EtherChannel
 
 <deflist collapsible="true">
@@ -349,7 +344,7 @@
 </deflist>
 
 <deflist collapsible="true">
-<def title="Zet het EtherChannel interface in trunk mode en laat vlan 10 & 20 toe + native vlan 99.">
+<def title="Zet het EtherChannel interface in trunk mode en laat vlan 10 en 20 toe + native vlan 99.">
     <code-block>
     Switch(config)# int port-channel 1
     Switch(config-if)# switchport mode trunk
