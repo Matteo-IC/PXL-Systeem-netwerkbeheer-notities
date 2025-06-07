@@ -517,5 +517,211 @@
 </def>
 </deflist>
 
+<deflist collapsible="true">
+<def title="Zet DHCP snooping aan.">
+    <code-block>
+    Switch(config)# ip dhcp snooping
+    </code-block>
+</def>
+</deflist>
+
+<deflist collapsible="true">
+<def title="Zet trust op een interface voor DHCP snooping.">
+    <code-block>
+    Switch(config)# int g0/0/1
+    Switch(config-if)# ip dhcp snooping trust
+    </code-block>
+</def>
+</deflist>
+
+<deflist collapsible="true">
+<def title="Zet een DHCP rate limit van 6 per seconde op interfaces 4 - 24.">
+    <code-block>
+    Switch(config)# int g0/0/4 - 24
+    Switch(config-if-range)# ip dhcp snooping limit rate 6
+    </code-block>
+</def>
+</deflist>
+
+<deflist collapsible="true">
+<def title="Zet DHCP snooping aan voor VLANs 10 en 20.">
+    <code-block>
+    Switch(config)# ip dhcp snooping vlan 10,20
+    </code-block>
+</def>
+</deflist>
+
+<deflist collapsible="true">
+<def title="Toon de DHCP snooping configuratie.">
+    <code-block>
+    Switch# show ip dhcp snooping
+    </code-block>
+</def>
+</deflist>
+
+<deflist collapsible="true">
+<def title="Zorg dat ARP packets gecheckt worden op MAC en IP-adres.">
+    <code-block>
+    Switch(config)# ip arp inspection validate src-mac dst-mac ip
+    </code-block>
+</def>
+</deflist>
+
+<deflist collapsible="true">
+<def title="Zet trust op interfaces 1 - 3 voor ARP inspection.">
+    <code-block>
+    Switch(config)# int g0/0/1 - 3
+    Switch(config-if-range)# ip arp inspection trust
+    </code-block>
+</def>
+</deflist>
+
+<deflist collapsible="true">
+<def title="Zet ARP inspection aan voor VLAN 10 en 20.">
+    <code-block>
+    Switch(config)# ip arp inspection vlan 10,20
+    </code-block>
+</def>
+</deflist>
+
+<deflist collapsible="true">
+<def title="Zet PortFast aan voor een interface.">
+    <code-block>
+    Switch(config)# int g0/0/1
+    Switch(config-if)# spanning-tree portfast
+    </code-block>
+</def>
+</deflist>
+
+<deflist collapsible="true">
+<def title="Zet BPDU Guard aan voor een interface.">
+    <code-block>
+    Switch(config)# int g0/0/1
+    Switch(config-if)# spanning-tree bpduguard enable
+    </code-block>
+</def>
+</deflist>
+
+## IP Static Routing
+
+<deflist collapsible="true">
+<def title="Configureer een next-hop statische route van 192.168.2.2 naar 192.168.1.0/24.">
+    <code-block>
+    Router(config)# ip route 192.168.1.0 255.255.255.0 192.168.2.2
+    </code-block>
+</def>
+</deflist>
+
+<deflist collapsible="true">
+<def title="Configureer een directly connected statische route van interface g0/0/1 naar 192.168.1.0/24.">
+    <code-block>
+    Router(config)# ip route 192.168.1.0 255.255.255.0 g0/0/1
+    </code-block>
+</def>
+</deflist>
+
+<deflist collapsible="true">
+<def title="Toon de geconfigureerde statische routes.">
+    <code-block>
+    Router# show ip route | begin Gateway
+    </code-block>
+</def>
+</deflist>
+
+<deflist collapsible="true">
+<def title="Zet IPv6 aan en configureer een next-hop statische route naar 2001:db8:1::/64 via 2001:db8:2::2.">
+    <code-block>
+    Router(config)# ipv6 unicast-routing
+    Router(config)# ipv6 route 2001:db8:1::/64 2001:db8:2::2
+    </code-block>
+</def>
+</deflist>
+
+<deflist collapsible="true">
+<def title="Configureer een directly connected statische route van interface g0/0/1 naar 2001:db8:1::/64.">
+    <code-block>
+    Router(config)# ipv6 route 2001:db8:1::/64 g0/0/1
+    </code-block>
+</def>
+</deflist>
+
+<deflist collapsible="true">
+<def title="Toon de geconfigureerde IPv6 statische routes.">
+    <code-block>
+    Router# show ipv6 route
+    </code-block>
+</def>
+</deflist>
+
+<deflist collapsible="true">
+<def title="Configureer een fully specified statische route van g0/0/1 en 192.168.2.2 naar 192.168.1.0/24.">
+    <code-block>
+    Router(config)# ip route 192.168.1.0 255.255.255.0 g0/0/1 192.168.2.2
+    </code-block>
+</def>
+</deflist>
+
+<deflist collapsible="true">
+<def title="Configureer een default statische route naar 192.168.1.2">
+    <code-block>
+    Router(config)# ip route 0.0.0.0 0.0.0.0 192.168.1.2
+    </code-block>
+</def>
+</deflist>
+
+<deflist collapsible="true">
+<def title="Configureer een default statische route naar 2001:db8:1::2">
+    <code-block>
+    Router(config)# ipv6 route ::/0 2001:db8:1::2
+    </code-block>
+</def>
+</deflist>
+
+<deflist collapsible="true">
+<def title="Toon de default statische route">
+    <code-block>
+    Router# show ip route static
+    </code-block>
+</def>
+</deflist>
+
+<deflist collapsible="true">
+<def title="Configureer een default statische route van naar 192.168.1.2 en een floating statische route naar 192.168.3.2">
+    <code-block>
+    Router(config)# ip route 0.0.0.0 0.0.0.0 192.168.1.2
+    Router(config)# ip route 0.0.0.0 0.0.0.0 192.168.3.2 5
+    </code-block>
+</def>
+</deflist>
+
+<deflist collapsible="true">
+<def title="Configureer een statische host route van 192.168.4.6 naar 192.168.8.9.">
+    <code-block>
+    Router(config)# ip route 192.168.8.9 255.255.255.255 192.168.4.6
+    </code-block>
+</def>
+</deflist>
+
+## Troubleshooting
+
+<deflist collapsible="true">
+<def title="Toon de direct verbonden apparaten.">
+    <code-block>
+    Switch# show cdp neighbors
+    </code-block>
+</def>
+</deflist>
+
+<deflist collapsible="true">
+<def title="Toon de route dat een pakket volgt naar de host 192.168.1.2.">
+    <code-block>
+    Router# traceroute 192.168.1.2
+    </code-block>
+</def>
+</deflist>
+
+
+
+
 
 
