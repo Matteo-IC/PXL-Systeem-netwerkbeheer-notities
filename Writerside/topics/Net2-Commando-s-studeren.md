@@ -277,6 +277,24 @@
 </def>
 </deflist>
 
+<deflist collapsible="true">
+<def title="Zet poort g0/0/1 om naar een routed poort met IP-adres 192.168.1.2/24.">
+    <code-block>
+    Switch(config)# int g0/0/1
+    Switch(config-if)# no switchport
+    Switch(config-if)# ip address 192.168.1.2 255.255.255.0
+    </code-block>
+</def>
+</deflist>
+
+<deflist collapsible="true">
+<def title="Toon alle trunk interfaces.">
+    <code-block>
+    Switch# show interfaces trunk
+    </code-block>
+</def>
+</deflist>
+
 ## STP Concepts
 
 <deflist collapsible="true">

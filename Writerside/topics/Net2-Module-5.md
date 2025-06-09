@@ -72,8 +72,13 @@ In zo een <control>BPDU</control> zit een <control>Bridge ID (BID)</control>.
     gebruikt om de <control>root bridge</control> te bepalen.
 </li>
 </list>
-
 </tip>
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 
 <tabs>
 <tab title="1. Root Bridge">
@@ -140,7 +145,8 @@ RP - │           │     │
 <tab title="3. Designated Poort">
     <p>De <control>designated poort</control> is de <control>poort op een switch</control> (root & niet root) die een 
     <control>netwerk segment verbindt met</control> het <control>beste pad naar de root bridge</control>.</p>
-    <p>Een netwerk segment is een deel van een netwerk. Bijvoorbeeld een computer verbonden met één switch.</p>
+    <p><emphasis>Een netwerk segment is een deel van een netwerk. Bijvoorbeeld een apparaat en kabel zijn één netwerk segment als
+    die verbonden zijn met een netwerk.</emphasis></p>
     <code-block>
 DP = Designated Poort
       ┌─────────┐
@@ -157,6 +163,8 @@ DP - ╭└─────────┘╮     │
  │Switch │   │Switch │ │
  │   C   │───│   D   │─╯
  └───────┘   └───────┘
+             │
+             DP
     </code-block>
 </tab>
 <tab title="4. Geblokkeerde Poorten">
@@ -176,7 +184,7 @@ DP - ╭└─────────┘╮     │
      │           x     │
  ┌───┴───┐   ┌───┴───┐ │
  │Switch │   │Switch │ │
- │   C   │x─x│   D   │─╯
+ │   C   │x──│   D   │─╯
  └───────┘   └───────┘
     </code-block>
     <tip>
