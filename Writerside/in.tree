@@ -52,10 +52,11 @@
     </toc-element>
     <toc-element toc-title="Windows Advanced">
         <toc-element topic="WinAdv-Windows-Server.md"/>
-        <toc-element topic="WinAdv-Machtigingen-en-services.md"/>
         <toc-element topic="WinAdv-Active-Directory.md"/>
+        <toc-element topic="WinAdv-Machtigingen-en-services.md"/>
         <toc-element topic="WinAdv-Policies.md"/>
         <toc-element topic="WinAdv-Domein-Uitbreidingen.md"/>
+        <toc-element topic="WinAdv-Profiles-en-folder-redirection.md"/>
     </toc-element>
     <toc-element toc-title="Networks 2">
         <toc-element topic="Net2-Commando-s-studeren.md"/>
