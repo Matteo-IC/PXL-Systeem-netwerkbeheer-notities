@@ -127,7 +127,7 @@ Bij het instellen van een SMB share zijn er 2 lagen van toegangsbeheer:
 - **NTFS-machtigingen**
     - **Toegangsrechten** die **specifiek** zijn **voor de bestanden en mappen binnen de share**.
 
-Een SMB **share is toegankelijk via \\servernaam\sharenaam**.
+Een SMB **share is toegankelijk via \\\servernaam\sharenaam**.
 
 ### Administratieve shares
 

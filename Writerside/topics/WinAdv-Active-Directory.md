@@ -86,9 +86,9 @@ AGDLP staat voor Accounts, Global groups, Domain Local groups, Permissions.
 Voorbeeld stappen volgens AGDLP:
 1. **Accounts** maken
 2. **Global groups** 1_GL & 2_GL maken
-3. Deze toevoegen aan de nieuwe **Domain Local groups** 1_DL & 2_DL
-4. Domain Local group 1_2_DL maken
+3. **Domain Local** groups 1_DL & 2_DL maken
     - Om alle gebruikers in beide groepen te beheren via 1 groep
+4. **Global groups toevoegen** aan de bijbehorende Domain Local group 1_DL & 2_DL
 5. Groepen **rechten** geven
 
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
