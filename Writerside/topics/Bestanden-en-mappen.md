@@ -217,6 +217,9 @@ Het **absolute pad naar dit bestand** zou zijn:
 
 ### Aanpassingen
 
+<warning>Als je via de CLI een <control>bestand verwijdert</control> of overschrijft, is deze 
+<control>permanent verwijderd</control>. Er is geen "vuilbak"!</warning>
+
 <tabs>
 <tab title="mv">
     <p>Het commando <code>mv</code> wordt gebruikt om <control>bestanden of mappen te verplaatsen</control>.</p>
@@ -289,7 +292,17 @@ Het **absolute pad naar dit bestand** zou zijn:
     <code-block>
     gebruiker@ubuntu:~$ mkdir map
     </code-block>
-    <p>Je kan ook een pad maken met meerdere mappen. Dan moet je <code>-p</code> gebruiken.</p>
+    <p>Je kan ook een <control>pad maken met meerdere mappen</control>. Dan moet je <code>-p</code> gebruiken.</p>
+    <code-block>
+    gebruiker@ubuntu:~$ mkdir -p map/anderemap/nogeenmap
+    </code-block>
+</tab>
+<tab title=">">
+    <p>Om een leeg <control>bestand te maken</control> of een bestand te overschrijven kan je <code>></code> gebruiken.</p>
+    <code-block>
+    gebruiker@ubuntu:~$ > bestand
+    </code-block>
+    <p>Meer over dit symbool en wat het doet komt in <a href="Commando-structuren.md"></a>.</p>
 </tab>
 </tabs>
 

@@ -39,7 +39,7 @@ gebruiker@ubuntu:~$
 gebruiker@ubuntu:~$
                  ^
 ```
-<note>~ is de standaard locatie waar je na het inloggen terechtkomt.</note>
+<note>~ is de standaard locatie / home map waar je na het inloggen terechtkomt.</note>
 
 <!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
 <format switcher-key="" color="#19191c" style="underline">

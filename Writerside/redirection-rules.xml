@@ -47,4 +47,8 @@
         <description>Created after removal of "Empty XML Topic" from Notities PXL</description>
         <accepts>Empty-XML-Topic.html</accepts>
     </rule>
+    <rule id="c13a50b">
+        <description>Created after removal of "Filters en bestanden bewerken" from Notities PXL</description>
+        <accepts>LinEss-Filters-en-bestanden-bewerken.html</accepts>
+    </rule>
 </rules>

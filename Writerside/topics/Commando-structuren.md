@@ -200,7 +200,7 @@ Zonder `1> file` zou stdout gewoon de bestanden en mappen tonen.
 **Met `1> file` zeggen we dat stdout naar het bestand `file` moet.**
 
 <note>
-   <p>Je moet niet <code>1></code> gebruiken om stdout om te leiden, standaard werkt <code>></code> ook.</p>
+   <p>Je moet niet <code>1></code> gebruiken om stdout om te leiden, <code>></code> werkt ook.</p>
    <p>Standaard betekent <code>></code> eigenlijk <code>1></code>.</p>
 </note>
 
@@ -274,6 +274,16 @@ hoppa
 ```
 
 Als je `cat` gebruikt kan je typen en daarna <shortcut>Ctrl+d</shortcut> gebruiken om te stoppen met typen.
+
+### Pipes
+
+Pipes zijn een **manier om de output van het ene commando naar het andere te sturen.**\
+**Dit kan met de `|` operator.**
+```
+gebruiker@ubuntu:~$ ls t* | cat >> hi
+```
+
+Hier wordt de output van `ls t*` naar `cat` gestuurd, die dan de output toevoegt aan het bestand `hi`.
 
 ## Control Operators
 
