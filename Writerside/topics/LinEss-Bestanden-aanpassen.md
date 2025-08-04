@@ -1,7 +1,7 @@
-# Bestanden aanpassen
+# Bestanden en output aanpassen
 
-Soms is de inhoud van een bestand niet helemaal hoe je het wilt.\
-In dat geval kan je de inhoud of de output van een bestand aanpassen.
+Soms is de output van een bestand of commando niet helemaal hoe je het wilt.\
+In dat geval kan je de inhoud of de output van het bestand of commando aanpassen.
 
 ## Inhoud aanpassen
 
@@ -209,25 +209,21 @@ gebruiker@ubuntu:~$ grep -E "^[0-9]" boek.txt
 # Toont regels die beginnen met een cijfer
 gebruiker@ubuntu:~$ grep -E "[a-zA-Z]" boek.txt
 # Toont regels die een kleine letter en daarna een hoofdletter bevatten
-gebruiker@ubuntu:~$ grep -E "Hall*" boek.txt
+gebruiker@ubuntu:~$ grep "Hall*" boek.txt
 # Toont regels waar "Hal" in staat en daarna 0 of meer "l" karakters staan
-gebruiker@ubuntu:~$ grep -E "H." boek.txt
+gebruiker@ubuntu:~$ grep "H." boek.txt
 # Toont regels waar "H" in staat en daarna 1 willekeurig karakter
 gebruiker@ubuntu:~$ grep -E "Hallo|Heyo" boek.txt
 # Toont regels waar "Hallo" of "Heyo" in staat
-gebruiker@ubuntu:~$ grep -E "H[a-z]?" boek.txt
+gebruiker@ubuntu:~$ grep "H[a-z]?" boek.txt
 # Toont regels waar "H" in staat en daarna 0 of 1 kleine letter
-gebruiker@ubuntu:~$ grep -E "P{3}" boek.txt
+gebruiker@ubuntu:~$ grep "P{3}" boek.txt
 # Toont regels waar "P" precies 3 keer in staat
 gebruiker@ubuntu:~$ grep -E "H(allo|eyo)" boek.txt
 # Toont regels waar "H" in staat en daarna "allo" of "eyo"
 ```
 
-<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
-<format style="underline">
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-</format>
-<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+### Output filteren
 
 <tabs>
 <tab title="tee">
@@ -257,7 +253,317 @@ Dit is een test
 <p>Om <control>toe te voegen aan een bestand</control> in de plaats van te overschrijven kan je 
 <control><code>-a</code> gebruiken</control>.</p>
 </tab>
-<tab title="">
-
+<tab title="cut">
+<p>Het commando <code>cut</code> kan <control>output scheiden</control>.</p>
+<code-block>
+gebruiker@ubuntu:~$ cat tekst
+1,2,3,4,5
+6,7,8,9,10
+11,12,13,14,15
+gebruiker@ubuntu:~$ cut -d ',' -f1 tekst
+1
+6
+11
+</code-block>
+<p>Hier is <code>-d ','</code> de "delimiter". Dat is het <control>punt waar de tekst opgesplitst wordt</control>.</p>
+<p><code>-f1</code> zegt welk veld het moet tonen. In dit geval het eerste.</p>
+</tab>
+<tab title="sort">
+<p>Het commando <code>sort</code> <control>kan output sorteren</control>.</p>
+<code-block>
+gebruiker@ubuntu:~$ cat tekst
+3
+1
+2
+4
+5
+gebruiker@ubuntu:~$ sort tekst
+1
+2
+3
+4
+5
+</code-block>
+<p>Je kan het <control>ook met pipes</control> gebruiken.</p>
+<code-block>
+gebruiker@ubuntu:~$ ls | sort
+file.txt
+folder
+test.txt
+</code-block>
+</tab>
+<tab title="uniq">
+<p>Het commando <code>uniq</code> <control>filtert dubbele regels uit de output</control>.</p>
+<code-block>
+gebruiker@ubuntu:~$ cat tekst
+1
+2
+2
+3
+4
+4
+5
+gebruiker@ubuntu:~$ uniq tekst
+1
+2
+3
+4
+5
+</code-block>
+<p>Als de <control>dubbele regels niet naast elkaar</control> staan moet je eerst <code>sort</code> gebruiken.</p>
+<code-block>
+gebruiker@ubuntu:~$ cat tekst
+1
+2
+3
+2
+4
+5
+4
+gebruiker@ubuntu:~$ sort tekst | uniq
+1
+2
+3
+4
+5
+</code-block>
+</tab>
+<tab title="wc">
+<p>Het commando <code>wc</code> <control>telt het aantal regels, woorden en karakters</control> in de output.</p>
+<code-block>
+gebruiker@ubuntu:~$ wc tekst
+        7      10     40 tekst
+gebruiker@ubuntu:~$ wc -l tekst
+7 tekst
+gebruiker@ubuntu:~$ wc -w tekst
+10 tekst
+gebruiker@ubuntu:~$ wc -c tekst
+40 tekst
+</code-block>
+<p><code>-l</code> staat voor "lines", <code>-w</code> betekent "words" en <code>-c</code> is "characters".</p>
+<p><control>Dit werkt natuurlijk ook met pipes.</control></p>
+<code-block>
+gebruiker@ubuntu:~$ ls | wc -l
+3
+</code-block>
+<p>Zo kan je bijvoorbeeld het aantal bestanden en folders zien.</p>
 </tab>
 </tabs>
+
+### Output veranderen
+
+Het commando `tr` kan gebruikt worden om de **output te veranderen**.\
+Het staat voor **"translate"** en kan gebruikt worden om **karakters te vervangen of te verwijderen**.
+
+```
+gebruiker@ubuntu:~$ echo "hallo wereld" | tr 'a' 'x'
+hxllo wereld
+```
+
+Het werkt ook met **regex**.
+
+```
+gebruiker@ubuntu:~$ echo "hallo wereld" | tr 'a-z' 'A-Z'
+HALLO WERELD
+```
+
+Je kan ook **meerdere karakters tegelijk vervangen**.
+
+```
+gebruiker@ubuntu:~$ echo "hallo wereld" | tr 'aeiou' 'AEIOU'
+hAllO wErEld
+```
+
+Er zijn een paar handige argumenten die je kan gebruiken:
+- `-d`: Verwijdert de opgegeven karakters.
+- `-s`: Vervangt opeenvolgende karakters door één karakter.
+
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+<format style="underline">
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+</format>
+<!-- INVISIBLE CHARACTERS FOR SECTION LINE -->
+
+Een ander commando dat je kan gebruiken is `sed`.\
+Dit staat voor **"stream editor"** en kan gebruikt worden om **tekst te vervangen, toe te voegen of te verwijderen**.
+
+```
+gebruiker@ubuntu:~$ echo "hallo wereld" | sed 's/hallo/hey/'
+hey wereld
+```
+
+Alleen het eerste voorkomen van "hallo" wordt vervangen.
+Je kan ook alle voorkomen van "hallo" vervangen met de `g` optie:
+
+```
+gebruiker@ubuntu:~$ echo "hallo hallo wereld" | sed 's/hallo/hey/g'
+hey hey wereld
+```
+
+Om `sed` hoofdletter ongevoelig te maken kan je de `i` optie toevoegen:
+
+```
+gebruiker@ubuntu:~$ echo "Hallo wereld" | sed 's/hallo/hey/i'
+hey wereld
+```
+Je kan ook meerdere commando's tegelijk uitvoeren met `sed`:
+
+```
+gebruiker@ubuntu:~$ echo "hallo wereld" | sed -e 's/hallo/hey/' -e 's/wereld/aarde/'
+hey aarde
+```
+
+De `d` optie kan gebruikt worden om regels te verwijderen:
+
+```
+gebruiker@ubuntu:~$ echo -e "hallo\nwereld" | sed '/wereld/d'
+hallo
+```
+
+## Commando's & Terminologie
+
+<table>
+<tr>
+    <td>Commando</td>
+    <td>Uitleg</td>
+</tr>
+<tr>
+    <td>nano</td>
+    <td>Tekstverwerker voor de CLI.</td>
+</tr>
+<tr>
+    <td>tac</td>
+    <td>Toont de inhoud van een bestand van onder naar boven.</td>
+</tr>
+<tr>
+    <td>head</td>
+    <td>Toont de eerste 10 regels van een bestand.</td>
+</tr>
+<tr>
+    <td>tail</td>
+    <td>Toont de laatste 10 regels van een bestand.</td>
+</tr>
+<tr>
+    <td>less</td>
+    <td>Toont de inhoud van een bestand deel per deel.</td>
+</tr>
+<tr>
+    <td>more</td>
+    <td>Toont de inhoud van een bestand deel per deel, maar is minder krachtig dan less.</td>
+</tr>
+<tr>
+    <td>grep</td>
+    <td>Zoekt naar tekst in een bestand en toont de regels die overeenkomen.</td>
+</tr>
+<tr>
+    <td>tee</td>
+    <td>Leest de input en schrijft deze naar de output, kan gebruikt worden met pipes.</td>
+</tr>
+<tr>
+    <td>cut</td>
+    <td>Scheidt output op basis van een delimiter.</td>
+</tr>
+<tr>
+    <td>sort</td>
+    <td>Sorteert de output.</td>
+</tr>
+<tr>
+    <td>uniq</td>
+    <td>Filtert dubbele regels uit de output.</td>
+</tr>
+<tr>
+    <td>wc</td>
+    <td>Telt het aantal regels, woorden en karakters in de output.</td>
+</tr>
+<tr>
+    <td>tr</td>
+    <td>Vervangt of verwijdert karakters in de output.</td>
+</tr>
+<tr>
+    <td>sed</td>
+    <td>Vervangt, voegt toe of verwijdert tekst in de output.</td>
+</tr>
+</table>
+
+<table>
+<tr>
+    <td>Term</td>
+    <td>Uitleg</td>
+</tr>
+<tr>
+    <td>Regex</td>
+    <td>Een manier om patronen te zoeken in tekst.</td>
+</tr>
+<tr>
+    <td>Delimiter</td>
+    <td>Het punt waar de tekst opgesplitst wordt.</td>
+</tr>
+</table>
+
+## Studeren {collapsible="true"}
+
+<deflist collapsible="true">
+<def title="Hoe sla je een bestand op in nano?">
+    Met de shortcut <shortcut>Ctrl+s</shortcut>.
+</def>
+
+<def title="Hoe sluit je nano af?">
+    Met de shortcut <shortcut>Ctrl+x</shortcut>.
+</def>
+
+<def title="Hoe bekijk je de inhoud van een bestand van onder naar boven?">
+    Via het commando <code>tac</code>.
+</def>
+
+<def title="Welk commando toont de eerste 10 regels van een bestand?">
+    Het commando <code>head</code>.
+</def>
+
+<def title="Welk commando wordt gebruikt als je een manpage opent?">
+    Het commando <code>less</code>.
+</def>
+
+<def title="Hoe zoek je naar een specifiek woord in een bestand of output?">
+    Met het commando <code>grep</code>.
+</def>
+
+<def title="Wat betekent [a-z] in regex?">
+    Het matcht één karakter uit de opgegeven reeks (in dit geval een kleine letter in het alfabet).
+</def>
+
+<def title="Wat doet + in regex?">
+    Het matcht 1 of meer van het vorige karakter.
+</def>
+
+<def title="Wat is het nut van het commando tee?">
+    Het leest de input en schrijft deze naar de output, waardoor je het kan gebruiken met pipes en sudo.
+</def>
+
+<def title="Wat doet het commando cut?">
+    Het scheidt output op basis van een delimiter.
+</def>
+
+<def title="Wat doet het commando sort?">
+    Het sorteert de output.
+</def>
+
+<def title="Wat doet het commando uniq?">
+    Het filtert dubbele regels uit de output.
+</def>
+
+<def title="Wat doet het commando wc?">
+    Het telt het aantal regels, woorden en karakters in de output of in een bestand.
+</def>
+
+<def title="Wat doet het commando tr?">
+    Het vervangt of verwijdert karakters in de output.
+</def>
+
+<def title="Wat doet het commando sed?">
+    Het vervangt, voegt toe of verwijdert tekst in de output.
+</def>
+
+<def title="Wat doet sed met s/w/p/?">
+    Het vervangt de eerste "w" in de regel met "p".
+</def>
+</deflist>
