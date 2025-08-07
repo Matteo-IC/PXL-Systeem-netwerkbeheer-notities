@@ -113,6 +113,19 @@ jobs:
             mv "$file" "dir/$base/index.html"
           done
 
+      # --- PATCH NAVIGATION/SEARCH LINKS TO ROOT-RELATIVE ---
+      - name: Patch navigation/search links to root-relative
+        run: |
+          BASE="/PXL-Systeem-netwerkbeheer-notities"
+          find dir -type f \( -name "*.html" -o -name "*.json" -o -name "*.jhm" \) | while read -r f; do
+            # Patch href="foo/" or href='foo/' to href="/PXL-Systeem-netwerkbeheer-notities/foo/"
+            sed -i -E "s#href=[\"']([a-zA-Z0-9._-]+)/[\"']#href=\"$BASE/\1/\"#g" "$f"
+            # Patch "foo/" (in JSON, etc) to "/PXL-Systeem-netwerkbeheer-notities/foo/"
+            sed -i -E "s#\"([a-zA-Z0-9._-]+)/\"#\"$BASE/\1/\"#g" "$f"
+            # Patch >foo/ (edge case in navigation) to >$BASE/foo/
+            sed -i -E "s#([> ])([a-zA-Z0-9._-]+)/#\1$BASE/\2/#g" "$f"
+          done
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
