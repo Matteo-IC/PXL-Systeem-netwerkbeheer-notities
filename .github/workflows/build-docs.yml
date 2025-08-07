@@ -106,6 +106,8 @@ jobs:
           shopt -s nullglob
           for file in dir/*.html; do
             base=$(basename "$file" .html)
+            # Skip root index.html
+            if [ "$base" = "index" ]; then continue; fi
             mkdir -p "dir/$base"
             mv "$file" "dir/$base/index.html"
           done
