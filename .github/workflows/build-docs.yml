@@ -94,12 +94,11 @@ jobs:
       # --- Rewrite internal links for navigation/search ---
       - name: Rewrite navigation/search links for clean URLs
         run: |
-          # Update .html references in all JSON, HTML, and JHM files in dir/
           find dir -type f \( -name "*.json" -o -name "*.jhm" -o -name "*.html" \) | while read -r f; do
             # Replace "foo.html" with "foo/"
             sed -i -E 's/"([^"/]+)\.html"/"\1\/"/g' "$f"
             # Replace =foo.html or >foo.html or  foo.html  with =foo/ etc.
-            sed -i -E 's/([= >])([^/ <]+)\.html([ "<])/\\1\\2\\/\\3/g' "$f"
+            sed -i -E 's/([= >])([^/ <]+)\.html([ "<])/\1\2\/\3/g' "$f"
           done
 
       # --- ADDED STEP FOR CLEAN URLS ---
