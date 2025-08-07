@@ -91,41 +91,6 @@ jobs:
       - name: Unzip artifact
         run: unzip -O UTF-8 -qq "artifacts/${{ needs.build.outputs.artifact }}" -d dir
 
-      # --- Rewrite internal links for navigation/search ---
-      - name: Rewrite navigation/search links for clean URLs
-        run: |
-          find dir -type f \( -name "*.json" -o -name "*.jhm" -o -name "*.html" \) | while read -r f; do
-            # Replace "foo.html" with "foo/"
-            sed -i -E 's/"([^"/]+)\.html"/"\1\/"/g' "$f"
-            # Replace =foo.html or >foo.html or  foo.html  with =foo/ etc.
-            sed -i -E 's/([= >])([^/ <]+)\.html([ "<])/\1\2\/\3/g' "$f"
-          done
-
-      # --- ADDED STEP FOR CLEAN URLS ---
-      - name: Move .html files to clean-url directories
-        run: |
-          shopt -s nullglob
-          for file in dir/*.html; do
-            base=$(basename "$file" .html)
-            # Skip root index.html
-            if [ "$base" = "index" ]; then continue; fi
-            mkdir -p "dir/$base"
-            mv "$file" "dir/$base/index.html"
-          done
-
-      # --- PATCH NAVIGATION/SEARCH LINKS TO ROOT-RELATIVE ---
-      - name: Patch navigation/search links to root-relative
-        run: |
-          BASE="/PXL-Systeem-netwerkbeheer-notities"
-          find dir -type f \( -name "*.html" -o -name "*.json" -o -name "*.jhm" \) | while read -r f; do
-            # Patch href="foo/" or href='foo/' to href="/PXL-Systeem-netwerkbeheer-notities/foo/"
-            sed -i -E "s#href=[\"']([a-zA-Z0-9._-]+)/[\"']#href=\"$BASE/\1/\"#g" "$f"
-            # Patch "foo/" (in JSON, etc) to "/PXL-Systeem-netwerkbeheer-notities/foo/"
-            sed -i -E "s#\"([a-zA-Z0-9._-]+)/\"#\"$BASE/\1/\"#g" "$f"
-            # Patch >foo/ (edge case in navigation) to >$BASE/foo/
-            sed -i -E "s#([> ])([a-zA-Z0-9._-]+)/#\1$BASE/\2/#g" "$f"
-          done
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
 

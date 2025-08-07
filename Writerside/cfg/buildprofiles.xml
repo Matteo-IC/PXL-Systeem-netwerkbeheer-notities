@@ -4,6 +4,7 @@
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
     <variables>
+        <custom-css>border_color_popup.css</custom-css>
     </variables>
     <build-profile instance="in">
         <variables>
@@ -11,7 +12,6 @@
                 google_search_script
             </analytics-head-script-file>
             <noindex-content>false</noindex-content>
-            <include-in-head>./base-href.html</include-in-head>
         </variables>
     </build-profile>
 
