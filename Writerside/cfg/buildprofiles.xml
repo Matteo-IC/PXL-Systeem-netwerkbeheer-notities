@@ -12,6 +12,7 @@
                 google_search_script
             </analytics-head-script-file>
             <noindex-content>false</noindex-content>
+            <web-root>https://matteo-ic.github.io/PXL-Systeem-netwerkbeheer-notities/</web-root>
         </variables>
     </build-profile>
 
