@@ -4,7 +4,6 @@
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
     <variables>
-        <custom-css>border_color_popup.css</custom-css>
     </variables>
     <build-profile instance="in">
         <variables>
