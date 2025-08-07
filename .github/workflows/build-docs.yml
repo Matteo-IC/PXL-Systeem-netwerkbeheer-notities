@@ -91,6 +91,16 @@ jobs:
       - name: Unzip artifact
         run: unzip -O UTF-8 -qq "artifacts/${{ needs.build.outputs.artifact }}" -d dir
 
+      # --- ADDED STEP FOR CLEAN URLS ---
+      - name: Move .html files to clean-url directories
+        run: |
+          shopt -s nullglob
+          for file in dir/*.html; do
+            base=$(basename "$file" .html)
+            mkdir -p "dir/$base"
+            mv "$file" "dir/$base/index.html"
+          done
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
