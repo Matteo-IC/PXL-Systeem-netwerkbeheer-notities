@@ -91,6 +91,15 @@ jobs:
       - name: Unzip artifact
         run: unzip -O UTF-8 -qq "artifacts/${{ needs.build.outputs.artifact }}" -d dir
 
+      # --- Rewrite internal links for navigation/search ---
+      - name: Rewrite navigation/search links for clean URLs
+        run: |
+          # Update .html references in all JSON, HTML, and JHM files in dir/
+          find dir -type f \( -name "*.json" -o -name "*.jhm" -o -name "*.html" \) | while read f; do
+            # Only rewrite .html URLs that are not already in subfolders
+            sed -i -E 's/"([^"/]+)\.html"/"\1\/index.html"/g; s/([= ]|>)(([^/ <]+)\.html)([ "<])/\\1\\3\/index.html\\4/g' "$f"
+          done
+
       # --- ADDED STEP FOR CLEAN URLS ---
       - name: Move .html files to clean-url directories
         run: |
