@@ -7,6 +7,9 @@
                  start-page="Home.md">
 
     <toc-element topic="Home.md"/>
+    <toc-element topic="Networks-1.md">
+        <toc-element topic="Net1-Module-1.md"/>
+    </toc-element>
     <toc-element toc-title="Linux Essentials">
         <toc-element topic="Linux-Essentials-1-Introductie.md"/>
         <toc-element topic="Command-Line-Interface.md"/>
@@ -14,6 +17,7 @@
         <toc-element topic="Linux-Essentials-Software.md"/>
         <toc-element topic="Commando-structuren.md"/>
         <toc-element topic="LinEss-Bestanden-aanpassen.md"/>
+        <toc-element topic="LinEss-Gebruikers-en-groepen.md"/>
     </toc-element>
     <toc-element toc-title="IT Organisation">
         <toc-element topic="Landschap-en-organisatiestructuren.md"/>

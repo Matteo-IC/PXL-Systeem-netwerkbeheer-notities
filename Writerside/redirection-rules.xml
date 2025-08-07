@@ -51,4 +51,16 @@
         <description>Created after removal of "Filters en bestanden bewerken" from Notities PXL</description>
         <accepts>LinEss-Filters-en-bestanden-bewerken.html</accepts>
     </rule>
+    <rule id="4b660af3">
+        <description>Created after removal of "Module 1" from Notities PXL</description>
+        <accepts>Net1-Module-1.html</accepts>
+    </rule>
+    <rule id="35fef575">
+        <description>Created after removal of "Module 1" from Notities PXL</description>
+        <accepts>Net1-Module-1.html</accepts>
+    </rule>
+    <rule id="6afa0e08">
+        <description>Created after removal of "Networks 1" from Notities PXL</description>
+        <accepts>Networks-1.html</accepts>
+    </rule>
 </rules>
