@@ -97,7 +97,7 @@ jobs:
           # Update .html references in all JSON, HTML, and JHM files in dir/
           find dir -type f \( -name "*.json" -o -name "*.jhm" -o -name "*.html" \) | while read f; do
             # Only rewrite .html URLs that are not already in subfolders
-            sed -i -E 's/"([^"/]+)\.html"/"\1\/index.html"/g; s/([= ]|>)(([^/ <]+)\.html)([ "<])/\\1\\3\/index.html\\4/g' "$f"
+            sed -i -E 's/"([^"/]+)\.html"/"\1\/"/g; s/([= ]|>)(([^/ <]+)\.html)([ "<])/\\1\\3\\/\\4/g' "$f"
           done
 
       # --- ADDED STEP FOR CLEAN URLS ---
