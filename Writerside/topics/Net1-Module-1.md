@@ -2,4 +2,4 @@
 
 Start typing here...
 
-<web-file-name>net1-module-1/index.html</web-file-name>
+<web-file-name>net1-module-1</web-file-name>
