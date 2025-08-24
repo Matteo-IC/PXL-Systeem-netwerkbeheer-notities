@@ -1,3 +1,3 @@
 # Networks 1
 
-Start typing here...
+Samenvattingen van Networks 1.
