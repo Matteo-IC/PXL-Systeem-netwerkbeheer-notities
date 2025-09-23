@@ -72,6 +72,9 @@
         </toc-element>
     </toc-element>
     <toc-element topic="2SNE.md">
+        <toc-element topic="Security-Essentials.md">
+            <toc-element topic="SecEss-Introductie.md"/>
+        </toc-element>
         <toc-element topic="Virtualization.md">
             <toc-element topic="Vir-Introductie.md"/>
         </toc-element>
