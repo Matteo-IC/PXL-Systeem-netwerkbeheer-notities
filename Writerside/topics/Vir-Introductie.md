@@ -38,79 +38,31 @@ Container image downloaden:
 $ podman image pull docker.io/library/nginx:latest
 ```
 
-Images listen
+Images oplijsten:
 ```
 $ podman image ls
 ```
 
-IP van container achterhalen
+IP van container achterhalen:
 ```
 $ nmcli device show ens160 | grep 'IP4.ADDRESS’
 ```
 
-Container met webserver starten
+Container met webserver starten:
 ```
 $ podman run -d --name web -p 8080:80 nginx
 ```
 
 *Webserver zou nu moeten draaien.*
 
-Webserver stoppen
+Webserver stoppen:
 ```
 $ podman stop web
 ```
 
-Webserver starten
+Webserver starten:
 ```
 $ podman start web
-```
-
-### Voorbeeld: podman coderen
-
-Je kan met vele programmeertalen met docker werken.\
-Dit voorbeeld is met Bash.
-
-Maak een directory aan voor het voorbeeld
-```
-$ mkdir docker-linux
-```
-
-Maak een containerfile aan
-```
-$ touch docker-linux/Dockerfile
-```
-
-Inhoud van containerfile er in zetten
-```
-$ nano docker-linux/Dockerfile  
-
-# Gebruik een officiële Fedora image als basis  
-FROM fedora:latest  
-# Stel werkdirectory in  
-WORKDIR /app  
-# Schrijf een shell commando dat "Hello, World" print  
-CMD ["echo", "Hello, World"]
-```
-
-Naar het dir met het Dockerfile gaan
-```
-$ cd docker-linux/
-```
-
-Bouw de podman image met de naam hallo-test
-```
-~/docker-linux$ podman build -t hallo-test .
-```
-
-Images opvragen
-```
-~/docker-linux$ podman images
-```
-
-Run de container, maakt niet uit in welk dir je zit
-```
-$ podman run hallo-test
-Hello, World
 ```
 
 ## Kubernetes
@@ -128,7 +80,7 @@ Je kan dit gemakkelijker maken via:
 - Zet automatisch containers aan of uit afhankelijk van de load.
 - Herstart en vervangt kapotte containers.
 - Doet aan load balancing, deelt het traffic over de containers
-- updates de containers zonder downtime
+- Updates de containers zonder downtime
 
 **Belangrijke concepten:**
 - **Pods:** een groep van één of meer containers

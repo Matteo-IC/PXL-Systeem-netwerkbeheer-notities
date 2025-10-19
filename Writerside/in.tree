@@ -81,6 +81,7 @@
         </toc-element>
         <toc-element topic="Scripting-Automation.md">
             <toc-element topic="ScriAut-Introductie.md"/>
+            <toc-element topic="ScrAut-Objecten.md"/>
         </toc-element>
     </toc-element>
 </instance-profile>
