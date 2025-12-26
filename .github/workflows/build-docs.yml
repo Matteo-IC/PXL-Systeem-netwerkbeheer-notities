@@ -12,7 +12,7 @@ permissions:
 
 env:
   INSTANCE: 'Writerside/in'
-  DOCKER_VERSION: '243.22562'
+  DOCKER_VERSION: 'latest'
 
 jobs:
   build:
