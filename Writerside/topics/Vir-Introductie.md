@@ -19,6 +19,7 @@
 **Voordelen van Podman:**
 - **Daemonless**
     - Geen aparte daemon nodig om te runnen: meer lightweight en secure
+    - Geen single point of failure
 - **Rootles** container
     - Docker runt als root
 - Is **compatibel met docker**
@@ -41,11 +42,6 @@ $ podman image pull docker.io/library/nginx:latest
 Images oplijsten:
 ```
 $ podman image ls
-```
-
-IP van container achterhalen:
-```
-$ nmcli device show ens160 | grep 'IP4.ADDRESS’
 ```
 
 Container met webserver starten:
@@ -79,15 +75,15 @@ Je kan dit gemakkelijker maken via:
 - Runs en manages containers over verschillende machines.
 - Zet automatisch containers aan of uit afhankelijk van de load.
 - Herstart en vervangt kapotte containers.
-- Doet aan load balancing, deelt het traffic over de containers
-- Updates de containers zonder downtime
+- Doet aan load balancing, deelt het traffic over de containers.
+- Updates de containers zonder downtime.
 
 **Belangrijke concepten:**
-- **Pods:** een groep van één of meer containers
-- **Nodes:** Machines waar pods op draaien
-- **Clusters:** Groepen van nodes die samen beheerd worden
-- **Services:** Zorgen dat pods netwerk resources hebben
-- **Deployments:** Beheren hoe je containers worden deployed of geüpdate
+- **Pods:** een groep van één of meer containers.
+- **Nodes:** Machines waar pods op draaien.
+- **Clusters:** Groepen van nodes die samen beheerd worden.
+- **Services:** Zorgen dat pods netwerk resources hebben.
+- **Deployments:** Beheren hoe je containers worden deployed of geüpdatet.
 
 ## Legacy applicaties vs microservices
 

@@ -30,27 +30,32 @@ commit <container> <new_image> # Maak een nieuwe image van een container
 
 logs <container>       # Toon de logs van een container
 image inspect <image>  # Toon informatie van een image
+image build -t <name> . # Bouw een image vanuit een Containerfile
+                          met een tag in de huidige map
 ```
 
 ## Terminologie
 
 - **SIGTERM**:
-  - Een signaal dat naar een proces wordt gestuurd en vraagt of die kan afsluiten.
+  - Een **signaal** dat **naar een proces** wordt gestuurd en **vraagt** of die kan **afsluiten**.
 
 - **SIGKILL**:
-  - Een signaal dat een proces onmiddellijk stopt, het proces kan dan niet proper afsluiten.
+  - Een **signaal dat een proces onmiddellijk stopt**, het proces kan dan **niet proper afsluiten**.
     Wordt meestal gedaan als een proces niet reageert op SIGTERM.
 
 ### Verschil ubi10 en ubi10-init
 
 - **ubi10:**
-  - Bevat alleen de minimale benodigdheden om een container te draaien.
+  - **Bevat** alleen de **minimale benodigdheden** om een container te draaien.
+    - Heeft bv. niet het commando `ps`.
   - Start **geen init-proces**, dus processen in de container moeten zelf hun signalen afhandelen.
-  - SIGTERM wordt vaak genegeerd.
+    - Er is dus **geen systemd**.
+  - **SIGTERM** wordt vaak **genegeerd**.
+  - **Goed** voor **dingen die niet afhankelijk** zijn van een init-proces zoals **systemd**.
 - **ubi10-init:**
   - Bevat **een init-proces** dat als eerste wordt gestart in de container.
-  - Dit init-proces zorgt ervoor dat processen in de container correct worden beheerd.
-  - Het init-proces zorgt ervoor dat signalen zoals SIGTERM correct worden afgehandeld.
+    - Heeft dus **wel systemd**.
+  - Het init-proces zorgt ervoor dat **signalen zoals SIGTERM correct worden afgehandeld**.
 
 ## Containerfiles
 
@@ -60,6 +65,7 @@ Een **Containerfile** (ook wel Dockerfile genoemd) is een **tekstbestand** dat *
 
 1. **Maak een bestand** genaamd `Dockerfile` aan.
    1. Kan anders heten, maar dan moet je dat meegeven in volgende stappen.
+   2. Podman erkent ook de naam `Containerfile`.
 2. **Schrijf de instructies** in het bestand.
 3. **Bouw het image** met het commando.
 
