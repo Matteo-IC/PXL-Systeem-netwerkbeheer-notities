@@ -203,7 +203,7 @@
 </deflist>
 
 <deflist collapsible="true">
-<def title="Zet OSPF aan, stel een router ID in en activeer OSPF op interface GigabitEthernet 0/0/0 & 0/0/1.">
+<def title="Zet OSPF aan, stel een router ID in en activeer OSPF op interface GigabitEthernet 0/0/0 en 0/0/1.">
     <code-block>
     Router(config)# router ospf 10
     Router(config-router)# router-id 1.1.1.1
