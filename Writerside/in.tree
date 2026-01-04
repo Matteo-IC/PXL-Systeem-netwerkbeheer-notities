@@ -74,6 +74,7 @@
     <toc-element topic="2SNE.md">
         <toc-element topic="Enterprise-Networks-1.md">
 
+            <toc-element topic="EntNet1-Praktijk-Studeren.md"/>
             <toc-element topic="EntNet1-OSPF.md"/>
         </toc-element>
         <toc-element topic="Security-Essentials.md">
