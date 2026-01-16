@@ -1,14 +1,14 @@
 # Introductie
 
 - Describe the cybersecurity concepts in this presentation in their own words.
-- [List the criteria of a strong password and apply them in practice.](#het-is-dus-belangrijk-dat-je-wachtwoord)
+- <a href="#het-is-dus-belangrijk-dat-je-wachtwoord" summary="Complex, uniek, geen persoonlijke info, veranderd wanneer gelekt.">List the criteria of a strong password and apply them in practice.</a>
 - Propose a valid countermeasure for a given vulnerability.
-- [Calculate the maximum number of password combinations given specific password requirements.](#wachtwoord-complexiteit)
-- Identify and provide an example for each dimension of the cybersecurity cube.
-- Apply multifactor authentication to an account
-- Give an example of AAA services
-- Explain the Defense in Depth / Castle Approach in their own words.
-- Provide an example for each layer of Defense in Depth.
+- <a href="#wachtwoord-complexiteit" summary="Complexiteit ^ lengte.">Calculate the maximum number of password combinations given specific password requirements.</a>
+- <a href="#cybersecurity-modellen" summary="CIA triad, states of data, beveiligingsmaatregelen.">Identify and provide an example for each dimension of the cybersecurity cube.</a>
+- Apply multifactor authentication to an account.
+- <a href="#cia-triad" summary="Authenticatie: Log in op website, Autorisatie: Blokkeren toegang tot bestand, Accounting: Firewall log.">Give an example of AAA services.</a>
+- <a href="#defense-in-depth-castle-approach">Explain the Defense in Depth / Castle Approach in their own words.</a>
+- <a href="#defense-in-depth-castle-approach" summary="">Provide an example for each layer of Defense in Depth.</a>
 - Configure a passkey on a supported account.
 - Use cvedetails.com to determine if there are known vulnerabilities in a specific software version.
 - Sort vulnerabilities on cvedetails.com for a given software by EPSS.
@@ -70,6 +70,10 @@ Een threat actor is een **individu of groep van black hat hackers**.
 **Reconnaissance:** Het proces van **informatie te verzamelen over een doelwit**.
 
 **Patch:** Een **update** voor software **die zwakheden fixt**.
+
+**Role-based access control (RBAC):** **Limiteren van permissies** op basis van de **rol van een gebruiker**.
+
+**Disaster recovery plan (DRP):** Een **plan** dat **beschrijft hoe** er moet worden **omgegaan** met **bvb. een storing of cyberaanval**.
 
 ## CVE
 
@@ -135,7 +139,7 @@ Hoeveel karakters: 4
 10^4 = 10000 mogelijke combinaties
 ```
 
-#### Het is dus belangrijk dat je wachtwoord:
+### Het is dus belangrijk dat je wachtwoord:
 - **Complex** is
 - **Uniek** voor elk account is
 - **Geen persoonlijke informatie** bevat
@@ -170,3 +174,122 @@ Het beschermt tegen dingen zoals:
 Je **kan inlog pogingen blokkeren gebaseerd op IP** / locatie of op bepaalde tijden het aantal toegestane login pogingen verminderen.
 
 **Passkeys:** Een **wachtwoord loze inlog methode** die gebruikt maakt van **crypto grafische sleutels**. Het werkt een beetje zoals SSH.
+
+## Cybersecurity modellen
+
+### CIA triad
+
+De CIA triad is een **model** dat **drie belangrijke doelen** bevat:
+
+1. **Confidentiality:** Alleen geautoriseerde personen mogen toegang hebben tot data.
+   - Authenticatie: Verifiëren van identiteit. Inloggen op een website.
+   - Autorisatie: Dingen (niet) toestaan op basis van rechten. Toegang blokkeren tot een bestand.
+   - Accounting: Bijhouden van wat er gedaan is. Logging van acties.
+2. **Integrity:** Data moet beschermd zijn tegen intentionele of onbedoelde wijzigingen.
+   - Input controle: Controleren of data geldig is voordat het wordt verwerkt.
+   - Back-ups: Regelmatig kopieën maken van data om te herstellen bij problemen.
+   - Data hashing: Checksums gebruiken om te controleren of data niet is aangepast.
+3. **Availability:** Data en systemen moeten altijd beschikbaar zijn.
+    - Redundantie: Meerdere systemen of componenten gebruiken om uitval te voorkomen.
+    - Back-ups: Regelmatig kopieën maken van data om te herstellen bij problemen.
+    - DDoS bescherming: Bescherming tegen aanvallen die systemen onbeschikbaar maken.
+
+### States of data
+
+**Data** kan zich in **drie staten** bevinden:
+1. **Data at rest:** Data die is opgeslagen op een apparaat of server.
+2. **Data in transit:** Data die wordt verzonden over een netwerk.
+3. **Data in use:** Data die actief wordt verwerkt door een applicatie of systeem.
+
+### Beveiligingsmaatregelen
+
+Er zijn **drie soorten beveiligingsmaatregelen**:
+1. **Menselijke factor:** Training en bewustwording van medewerkers.
+2. **Beleid en praktijken:** Regels en procedures.
+3. **Technologie:** Firewalls, antivirus software, encryptie, etc.
+
+### Cybersecurity cube
+
+Een **model** dat helpt met het **visualiseren van** de **aspecten van cybersecurity**.\
+Het heeft drie vlakken, elk vlak is één van de modellen hierboven:
+- **CIA triad**
+- **States of data**
+- **Beveiligingsmaatregelen**
+
+### Defense in Depth / Castle Approach
+
+Het idee is om **meerdere lagen van beveiliging** te hebben, zodat als **één laag faalt**, de **andere lagen** nog steeds **bescherming bieden**.
+```
+Defense in Depth
+
+                 ┌───────────────────────────────────────┐
+                 │   POLICIES, PROCEDURES & AWARENESS    │
+                 │  ┌──────────────┐   ┌──────────────┐  │
+                 │  │     MFA      │   │   Training   │  │
+                 │  └──────┬───────┘   └──────┬───────┘  │
+                 │  ┌──────▼───────┐   ┌──────▼───────┐  │
+                 │  │    RBAC      │   │   Policies   │  │
+                 │  └──────────────┘   └──────────────┘  │
+                 └───────────────────┬───────────────────┘
+                                     │
+                 ┌───────────────────▼───────────────────┐
+                 │            PHYSICAL LAYER             │
+                 │  ┌──────────────┐   ┌──────────────┐  │
+                 │  │Access Control│   │ Surveillance │  │
+                 │  └──────┬───────┘   └──────┬───────┘  │
+                 │  ┌──────▼───────┐   ┌──────▼───────┐  │
+                 │  │  Locks/Keys  │   │   Security   │  │
+                 │  └──────────────┘   └──────────────┘  │
+                 └───────────────────┬───────────────────┘
+                                     │
+                 ┌───────────────────▼───────────────────┐
+                 │            PERIMETER LAYER            │
+                 │  ┌──────────────┐   ┌──────────────┐  │
+                 │  │     VPN      │   │   Firewall   │  │
+                 │  └──────┬───────┘   └──────┬───────┘  │
+                 │  ┌──────▼───────┐   ┌──────▼───────┐  │
+                 │  │   IDS/IPS    │   │Content Filter│  │
+                 │  └──────────────┘   └──────────────┘  │
+                 └───────────────────┬───────────────────┘
+                                     │
+                 ┌───────────────────▼───────────────────┐
+                 │            NETWORK LAYER              │
+                 │  ┌──────────────┐   ┌──────────────┐  │
+                 │  │   Firewall   │   │    VLAN      │  │
+                 │  └──────┬───────┘   └──────┬───────┘  │
+                 │  ┌──────▼───────┐   ┌──────▼───────┐  │
+                 │  │   IDS/IPS    │   │Safe Protocols│  │
+                 │  └──────┬───────┘   └──────┬───────┘  │
+                 │  ┌──────▼───────┐   ┌──────▼───────┐  │
+                 │  │     ACLs     │   │    (etc.)    │  │
+                 │  └──────────────┘   └──────────────┘  │
+                 └───────────────────┬───────────────────┘
+                                     │
+                 ┌───────────────────▼───────────────────┐
+                 │              HOST LAYER               │
+                 │  ┌──────────────┐   ┌──────────────┐  │
+                 │  │  Antivirus   │   │   Patches    │  │
+                 │  └──────┬───────┘   └──────┬───────┘  │
+                 │  ┌──────▼───────┐   ┌──────▼───────┐  │
+                 │  │ OS Hardening │   │    (etc.)    │  │
+                 │  └──────────────┘   └──────────────┘  │
+                 └───────────────────┬───────────────────┘
+                                     │
+                 ┌───────────────────▼───────────────────┐
+                 │          APPLICATION LAYER            │
+                 │  ┌──────────────┐   ┌──────────────┐  │
+                 │  │     SSO      │   │     MFA      │  │
+                 │  └──────┬───────┘   └──────┬───────┘  │
+                 │  ┌──────▼───────┐   ┌──────────────┐  │
+                 │  │     AAA      │   │    (etc.)    │  │
+                 │  └──────────────┘   └──────────────┘  │
+                 └───────────────────┬───────────────────┘
+                                     │
+                 ┌───────────────────▼───────────────────┐
+                 │               DATA LAYER              │
+                 │            ┌──────────────┐           │
+                 │            │   Database   │           │
+                 │            └──────────────┘           │
+                 └───────────────────────────────────────┘
+```
+
