@@ -16,7 +16,7 @@
     Areas
 </def>
 <def title="Wat is het verschil tussen multiaccess en point-to-point OSPF?">
-    <p>Multiaccess: Meerdere routers zijn verbonden met hetzelfde netwerksegment (bijv. Ethernet). DR en BDR worden gekozen.</p>
+    <p>Multiaccess: Meerdere routers zijn verbonden met elkaar met bijvoorbeeld een switch er tussen. DR en BDR worden gekozen.</p>
     <p>Point-to-point: Twee routers zijn direct met elkaar verbonden zonder andere routers op hetzelfde segment. Geen DR of BDR nodig.</p>
 </def>
 <def title="Wat zijn de 5 soorten OSPF packets?">
@@ -121,5 +121,5 @@
 <def title="Hoe vaak worden LSU packets naar neighbors gestuurd wanneer het OSPF-netwerk volledig is?">
     Elke 30 minuten.
 </def>
-
 </deflist>
+
