@@ -63,4 +63,8 @@
         <description>Created after removal of "Networks 1" from Notities PXL</description>
         <accepts>Networks-1.html</accepts>
     </rule>
+    <rule id="2f2820e4">
+        <description>Created after removal of "Flashcards" from Notities PXL</description>
+        <accepts>ScrAut-Flashcards.html</accepts>
+    </rule>
 </rules>
