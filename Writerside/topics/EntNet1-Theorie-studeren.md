@@ -123,3 +123,60 @@
 </def>
 </deflist>
 
+## ACL
+
+<deflist collapsible="true">
+<def title="Wat is een Access Control List (ACL)?">
+    Een set regels die bepaalt welk netwerkverkeer is toegestaan.
+</def>
+<def title="Wat is het verschil tussen standard en extended ACL's?">
+    <p>Standaard ACL's filteren verkeer op basis van bron IP-adres.</p>
+    <p>Uitgebreide ACL's kunnen filteren op basis van bron- en bestemmings-IP-adressen, protocollen en poorten.</p>
+</def>
+<def title="Op welke lagen van het OSI-model werken standard en extended ACL's?">
+    <p>Standaard ACL's werken op laag 3 (netwerklaag).</p>
+    <p>Uitgebreide ACL's werken op laag 3 (netwerklaag) en laag 4 (transportlaag).</p>
+</def>
+<def title="Wat is het verschil tussen inbound en outbound ACL's?">
+    <p>Inbound ACL's worden toegepast op verkeer dat een interface binnenkomt.</p>
+    <p>Outbound ACL's worden toegepast op verkeer dat een interface verlaat.</p>
+</def>
+<def title="Wat staat standaard en verborgen in een ACL?">
+    Aan het einde van elke ACL staat standaard een verborgen 'deny all' regel die al het overige verkeer blokkeert.
+</def>
+<def title="Wat is het nut van een wildcard mask in een ACL?">
+    Het specificeert welk deel van het IP-adres moet worden gecheckt bij het toepassen van de ACL-regel.
+</def>
+<def title="Wat doen 'host' en 'any' in een ACL?">
+    <p>'host': Is hetzelfde als het wildcard mask <code>0.0.0.0</code>.</p>
+    <p>'any': Is hetzelfde als <code>0.0.0.0 255.255.255.255</code>.</p>
+</def>
+<def title="Wat is het verschil tussen een standard en een extended ACL in termen van nummering?">
+    <p>Standard ACL's gebruiken nummers van 1-99 en 1300-1999.</p>
+    <p>Extended ACL's gebruiken nummers van 100-199 en 2000-2699.</p>
+</def>
+<def title="Waar worden standard ACL's meestal toegepast?">
+    Zo dicht mogelijk bij de bestemming.
+</def>
+<def title="Waar worden extended ACL's meestal toegepast?">
+    Zo dicht mogelijk bij de bron.
+</def>
+</deflist>
+
+## NAT
+
+<deflist collapsible="true">
+<def title="Wat is Network Address Translation (NAT)?">
+    Een techniek die meerdere privé-IP-adressen een enkel openbaar IP-adres laat delen.
+</def>
+<def title="Welke 4 soorten adressen bestaan er binnen NAT?">
+    <p>Inside local address</p>
+    <p>Inside global address</p>
+    <p>Outside local address</p>
+    <p>Outside global address</p>
+</def>
+<def title="Welk soort adres is het adres dat door de buitenkant als het bron adres wordt gezien?">
+    Inside global address
+</def>
+</deflist>
+
