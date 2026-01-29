@@ -321,5 +321,21 @@
     <p>3. CBWFQ: Class-Based Weighted Fair Queueing</p>
     <p>4. LLQ: Low Latency Queueing</p>
 </def>
+<def title="Wat is FIFO?">
+    First-In, First-Out. Packets worden in de volgorde verwerkt waarin ze aankomen.
+</def>
+<def title="Wat is WFQ?">
+    Weighted Fair Queueing. Beslist welk netwerkverkeer prioriteit krijgt op basis van analyse van packets. Geeft bijvoorbeeld prioriteit aan interactieve data zoals VoIP.
+</def>
+<def title="Wat is CBWFQ?">
+    Class-Based Weighted Fair Queueing. Vergelijkbaar met WFQ, maar maakt gebruik van vooraf gedefinieerde klassen om verkeer te categoriseren en prioriteren.
+</def>
+<def title="Wat is LLQ?">
+    Low Latency Queueing. Een uitbreiding van CBWFQ met Strict Priority Queueing (PQ). Hiermee kan specifiek verkeer, zoals VoIP, altijd voorrang krijgen.
+</def>
+<def title="Wat zijn de 3 modellen voor QoS? Leg ze ook uit.">
+    <p>1. Best-effort: Eigenlijk geen QoS, er wordt geen verschil gemaakt tussen packets. Is heel schaalbaar.</p>
+    <p>2. IntServ: Integrated Services, maakt gebruik van het protocol RSVP. Applicaties laten weten wat voor bandwidth en delay vereisten ze hebben. Is niet goed schaalbaar.</p>
+    <p>3. DiffServ: Differentiated Services, gebruikt classes om netwerkverkeer te verdelen en deze verschillende hoeveelheden prioriteit te geven. Is heel schaalbaar.</p>
+</def>
 </deflist>
-
