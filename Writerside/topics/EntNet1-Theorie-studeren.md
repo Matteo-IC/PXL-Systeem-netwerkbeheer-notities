@@ -120,6 +120,9 @@
 <def title="Hoe vaak worden LSU packets naar neighbors gestuurd wanneer het OSPF-netwerk volledig is?">
     Elke 30 minuten.
 </def>
+<def title="Wat is Gratuitous ARP?">
+    Een ARP-bericht dat de IP naar MAC adres mapping aankondigt van een apparaat zonder dat er een ARP-verzoek is ontvangen.
+</def>
 </deflist>
 
 ## ACL
@@ -166,7 +169,7 @@
 
 <deflist collapsible="true">
 <def title="Wat is Network Address Translation (NAT)?">
-    Een techniek die meerdere privé-IP-adressen een enkel openbaar IP-adres laat delen.
+    Een techniek die meerdere privé-IP-adressen een enkel publiek IP-adres laat delen.
 </def>
 <def title="Welke 4 soorten adressen bestaan er binnen NAT?">
     <p>Inside local address</p>
@@ -189,16 +192,16 @@
     Outside global address
 </def>
 <def title="Wat is Static NAT?">
-    Static NAT maakt een permanente link tussen een privé-IP-adres en een openbaar IP-adres.
+    Static NAT maakt een permanente link tussen een privé-IP-adres en een publiek IP-adres.
 </def>
 <def title="Wat is Dynamic NAT?">
-    Dynamic NAT maakt gebruik van een pool van openbare IP-adressen die dynamisch worden toegewezen aan privé-IP-adressen.
+    Dynamic NAT maakt gebruik van een pool van publieke IP-adressen die dynamisch worden toegewezen aan privé-IP-adressen.
 </def>
 <def title="Wat is PAT (NAT overload)?">
-    PAT maakt gebruik van één of meer openbare IP-adressen en verschillende poortnummers om meerdere privé-IP-adressen te vertalen.
+    PAT maakt gebruik van één of meer publieke IP-adressen en verschillende poortnummers om meerdere privé-IP-adressen te vertalen.
 </def>
 <def title="Wat gebeurt er als PAT geen beschikbare poorten meer heeft?">
-    Het probeert het volgende beschikbare openbare IP-adres in de pool te gebruiken, als er geen zijn, werkt PAT niet.
+    Het probeert het volgende beschikbare publieke IP-adres in de pool te gebruiken, als er geen zijn, werkt PAT niet.
 </def>
 <def title="Wat gebruikt PAT als een packet geen layer 4 poort nummer heeft, specifiek voor een ICMPv4 echo request?">
     PAT gebruikt het Query ID-veld om een echo request te identificeren met de bijbehorende echo reply.
@@ -253,6 +256,70 @@
 </def>
 <def title="MPLS routers zijn LSR's. Wat betekent LSR?">
     Label Switched Router
+</def>
+<def title="Waar staat de afkorting DSL voor?">
+    Digital Subscriber Line
+</def>
+</deflist>
+
+## VPN and IPsec
+
+<deflist collapsible="true">
+<def title="Wat is het verschil tussen een site-to-site VPN en een remote-access VPN?">
+    <p>Site-to-site VPN: Verbindt hele netwerken met elkaar via het internet. Zo lijkt het alsof ze op dezelfde LAN zitten.</p>
+    <p>Remote-access VPN: Verbindt individuele gebruikers met een netwerk via het internet. Wordt gestart door de gebruiker.</p>
+</def>
+<def title="Wat is het verschil tussen een enterprise VPN en een Service provider VPN?">
+    <p>Enterprise: Gebruikt IPsec en SSL VPN's.</p>
+    <p>Service provider: Gebruikt MPLS om VPN-netwerkverkeer te scheiden van ander netwerkverkeer.</p>
+</def>
+<def title="Wat is het verschil tussen Clientless en Client-based remote access VPN's?">
+    <p>Clientless: Via bijvoorbeeld een webbrowser die SSL gebruikt om HTTP verkeer of andere protocollen te beveiligen.</p>
+    <p>Client-based: Vereist speciale VPN-clientsoftware op het apparaat van de gebruiker.</p>
+</def>
+<def title="Wat betekent AH en ESP?">
+    <p>Authentication Header</p>
+    <p>Encapsulation Security Protocol</p>
+</def>
+<def title="Wat is HMAC?">
+    Hashed Message Authentication Code, een cryptografische techniek die wordt gebruikt om de integriteit van een bericht te verifiëren.
+</def>
+<def title="Wat is de opbouw van een IPsec VPN?">
+    <p>1. IPsec protocollen: ESP</p>
+    <p>2. Encryptie / confidentiality: AES of SEAL</p>
+    <p>3. Integriteit: HMAC, gebruikt SHA256</p>
+    <p>4. Authenticate: RSA</p>
+    <p>5. Diffie-Hellman: Keys worden gedeeld</p>
+</def>
+<def title="Welke DH groepen worden afgeraden en welke worden aangeraden?">
+    <p>Afgeraden: 1, 2 en 5</p>
+    <p>Aangeraden (tot 2030): 14, 15 en 16</p>
+    <p>Aangeraden: 19, 20, 21 en 24</p>
+</def>
+</deflist>
+
+## QoS
+
+<deflist collapsible="true">
+<def title="Noem 3 verschillende bronnen van delay.">
+    <p>1. Code delay: De tijd dat het duurt om de data te comprimeren voor het op te sturen.</p>
+    <p>2. Packetization delay: De tijd dat het duurt om de packet te encapsulaten.</p>
+    <p>3. Queuing delay: De tijd dat een packet moet wachten voordat deze kan worden verstuurd.</p>
+    <p>4. Serialization delay: De tijd dat het duurt om data op de kabel te zetten.</p>
+    <p>5. Propagation delay: De tijd dat het duurt voor de data om van bron naar doel te geraken.</p>
+    <p>6. De-jitter delay: De tijd dat het duurt om meerdere packets te bufferen en ze met gelijke intervallen te versturen.</p>
+</def>
+<def title="Wat is packet loss?">
+    Wanneer packets verloren gaan tijdens de transmissie over het netwerk.
+</def>
+<def title="Wat is jitter?">
+    De variatie in packet aankomst tijden, wat kan leiden tot onregelmatige ontvangst van data.
+</def>
+<def title="Wat zijn 4 queue algoritmes?">
+    <p>1. FIFO: First-In, First-Out</p>
+    <p>2. WFQ: Weighted Fair Queueing</p>
+    <p>3. CBWFQ: Class-Based Weighted Fair Queueing</p>
+    <p>4. LLQ: Low Latency Queueing</p>
 </def>
 </deflist>
 
