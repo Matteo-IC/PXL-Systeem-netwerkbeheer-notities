@@ -372,4 +372,67 @@
 
 ## IPv4 NAT
 
-
+<deflist collapsible="true">
+<def title="Maak een static NAT mapping voor het inside local IP: 192.168.1.18 en het inside global IP: 203.85.4.71">
+    <code-block>
+    Router(config)# ip nat inside source static 192.168.1.18 203.85.4.71
+    </code-block>
+</def>
+<def title="Configureer nu 2 interfaces, GigabitEthernet 0/0/0 als inside en GigabitEthernet 0/0/1 als outside.">
+    <code-block>
+    Router(config)# interface GigabitEthernet 0/0/0
+    Router(config-if)# ip nat inside
+    Router(config)# interface GigabitEthernet 0/0/1
+    Router(config-if)# ip nat outside
+    </code-block>
+</def>
+<def title="Check of de NAT configuratie gelukt is.">
+    <code-block>
+    Router# show ip nat translations
+    </code-block>
+</def>
+<def title="Configureer een dynamische NAT pool met de naam 'NAT-POOL1' die een range van 5 IP-adressen bevat: 201.78.61.1 tot en met 201.78.61.6">
+    <code-block>
+    Router(config)# ip nat pool NAT-POOL1 201.78.61.1 201.78.61.6 netmask 255.255.255.248
+    </code-block>
+</def>
+<def title="Maak een access-list die bepaalt dat alleen 192.168.0.0/16 mogen worden vertaald.">
+    <code-block>
+    Router(config)# access-list 20 permit 192.168.0.0 0.0.255.255
+    </code-block>
+</def>
+<def title="Koppel de NAT pool en de access-list aan elkaar.">
+    <code-block>
+    Router(config)# ip nat inside source list 20 pool NAT-POOL1
+    </code-block>
+</def>
+<def title="Configureer nu 2 interfaces, GigabitEthernet 0/0/0 als inside en GigabitEthernet 0/0/1 als outside.">
+    <code-block>
+    Router(config)# interface GigabitEthernet 0/0/0
+    Router(config-if)# ip nat inside
+    Router(config)# interface GigabitEthernet 0/0/1
+    Router(config-if)# ip nat outside
+    </code-block>
+</def>
+<def title="Configureer PAT voor één enkel publiek IP-adres op GigabitEthernet 0/0/1 en het privé subnet 192.168.0.0/24">
+    <code-block>
+    Router(config)# ip nat inside source list 30 interface GigabitEthernet 0/0/1 overload
+    Router(config)# access-list 30 permit 192.168.0.0 0.0.0.255
+    Router(config)# interface GigabitEthernet 0/0/0
+    Router(config-if)# ip nat inside
+    Router(config)# interface GigabitEthernet 0/0/1
+    Router(config-if)# ip nat outside
+    </code-block>
+</def>
+<def title="Configureer PAT voor een address pool van 201.78.61.1 tot en met 201.78.61.6 en het privé subnet 192.168.0.0/16">
+    <code-block>
+    Router(config)# ip nat pool NAT-POOL2 201.78.61.1 201.78.61.6 netmask 255.255.255.248
+    Router(config)# access-list 40 permit 192.168.0.0 0.0.255.255
+    Router(config)# ip nat inside source list 40 pool NAT-POOL2 overload
+    Router(config)# interface GigabitEthernet 0/0/0
+    Router(config-if)# ip nat inside
+    Router(config)# interface GigabitEthernet 0/0/1
+    Router(config-if)# ip nat outside
+    </code-block>
+</def>
+</deflist>

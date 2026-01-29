@@ -40,7 +40,6 @@
 <def title="Wat staat er in de link-state database?">
     <p>Informatie over al de andere routers in het netwerk.</p>
     <p>Het representeert de netwerktopologie.</p>
-    <p>Alle routers hebben dezelfde LSDB.</p>
 </def>
 <def title="Wat staat er in de forwarding database?">
     De beste routes naar alle bekende routers.
@@ -177,6 +176,83 @@
 </def>
 <def title="Welk soort adres is het adres dat door de buitenkant als het bron adres wordt gezien?">
     Inside global address
+</def>
+<def title="Welk soort adres is het adres dat door de binnenkant als het bron adres wordt gezien?">
+    Inside local address
+</def>
+<def title="Welke soorten NAT bestaan er?">
+    <p>Static NAT</p>
+    <p>Dynamic NAT</p>
+    <p>PAT (NAT overload)</p>
+</def>
+<def title="Welk soort adres is het adres dat door de binnenkant als het bestemmingsadres wordt gezien?">
+    Outside global address
+</def>
+<def title="Wat is Static NAT?">
+    Static NAT maakt een permanente link tussen een privé-IP-adres en een openbaar IP-adres.
+</def>
+<def title="Wat is Dynamic NAT?">
+    Dynamic NAT maakt gebruik van een pool van openbare IP-adressen die dynamisch worden toegewezen aan privé-IP-adressen.
+</def>
+<def title="Wat is PAT (NAT overload)?">
+    PAT maakt gebruik van één of meer openbare IP-adressen en verschillende poortnummers om meerdere privé-IP-adressen te vertalen.
+</def>
+<def title="Wat gebeurt er als PAT geen beschikbare poorten meer heeft?">
+    Het probeert het volgende beschikbare openbare IP-adres in de pool te gebruiken, als er geen zijn, werkt PAT niet.
+</def>
+<def title="Wat gebruikt PAT als een packet geen layer 4 poort nummer heeft, specifiek voor een ICMPv4 echo request?">
+    PAT gebruikt het Query ID-veld om een echo request te identificeren met de bijbehorende echo reply.
+</def>
+</deflist>
+
+## WAN concepts
+
+<deflist collapsible="true">
+<def title="Wat is het verschil tussen een Single-carrier en Dual-carrier WAN verbinding?">
+    <p>Single-carrier: Eén enkele provider levert de WAN-dienst.</p>
+    <p>Dual-carrier: Twee verschillende providers leveren de WAN-dienst, wat zorgt voor redundantie en betrouwbaarheid.</p>
+</def>
+<def title="Wat betekent de term POP?">
+    POP staat voor Point of Presence. Het is het fysieke punt waar een WAN-provider verbinding maakt met het netwerk van de klant.
+</def>
+<def title="Wat is een demarcation point?">
+    Het is het fysieke punt waar de verantwoordelijkheid van de WAN-provider eindigt en de verantwoordelijkheid van de klant begint.
+</def>
+<def title="Wat is DTE?">
+    Data Terminal Equipment, het apparaat (meestal een router) dat de LAN van de klant verbindt met het WAN.
+</def>
+<def title="Wat is DCE?">
+    Data Communications Equipment, het apparaat (meestal een modem) dat de data verstuurt en ontvangt over het WAN.
+</def>
+<def title="Wat is CPE?">
+    Customer Premises Equipment, de DTE en DCE-apparaten die zich bevinden op het terrein van de klant.
+</def>
+<def title="Wat is een local loop / last mile?">
+    De fysieke kabel die de CPE verbindt met de WAN-provider's netwerk.
+</def>
+<def title="Wat is een DSL-modem en een Cable modem?">
+    <p>Dit zijn DCE-apparaten.</p>
+    <p>DSL-modem: Gebruikt telefoonlijnen voor dataoverdracht.</p>
+    <p>Cable modem: Gebruikt coaxiale kabels voor dataoverdracht.</p>
+</def>
+<def title="Wat is een CSU/DSU?">
+    <p>Channel Service Unit/Data Service Unit, een DCE-apparaat of interface op een DCE-apparaat.</p>
+    <p>CSU: Zorgt voor verbinding integriteit via error correction en line monitoring.</p>
+    <p>DSU: Zet digitale signalen van de DTE om naar signalen die geschikt zijn voor de WAN-verbinding en vice versa.</p>
+</def>
+<def title="Waarom wordt parallel communicatie niet gebruikt in een WAN?">
+    Omdat het voor lange afstanden slecht werkt vanwege synchronisatieproblemen.
+</def>
+<def title="Wat is MPLS?">
+    Multiprotocol Label Switching, een technologie die data in een WAN kan versturen zonder dat er rekening hoeft te worden gehouden met het onderliggende protocol of payload.
+</def>
+<def title="Wat is een CE, PE en P router?">
+    <p>CE: Customer Edge router</p>
+    <p>PE: Provider Edge router</p>
+    <p>P: Provider router</p>
+</def>
+<def title="MPLS routers zijn LSR's. Wat betekent LSR?">
+    Label Switched Router
 </def>
 </deflist>
 
