@@ -178,7 +178,7 @@
     <p>Outside global address</p>
 </def>
 <def title="Welk soort adres is het adres dat door de buitenkant als het bron adres wordt gezien?">
-    Inside global address
+    Outside local address
 </def>
 <def title="Welk soort adres is het adres dat door de binnenkant als het bron adres wordt gezien?">
     Inside local address
